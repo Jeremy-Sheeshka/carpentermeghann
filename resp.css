@@ -1,0 +1,248 @@
+/* ========================================================================== */
+/* 400px and above */
+
+@media only screen
+and (min-width: 400px) {
+
+    .span-4-400     { grid-column: span 4; }
+    .span-5-400     { grid-column: span 5; }
+    .span-6-400     { grid-column: span 6; }
+    .span-8-400     { grid-column: span 8; }
+    .span-10-400    { grid-column: span 10; }
+    .w-25-400       { width: 25%; }
+    .w-33-400       { width: calc(100% / 3); }
+
+}
+
+/* ========================================================================== */
+/* 500px and above */
+
+@media only screen
+and (min-width: 500px) {
+
+    .span-6-500     { grid-column: span 6; }
+    .span-8-500     { grid-column: span 8; }
+    .span-10-500    { grid-column: span 10; }
+    .w-33-500       { width: calc(100% / 3); }
+
+}
+
+/* ========================================================================== */
+/* 600px and above */
+
+@media only screen
+and (min-width: 600px) {
+    
+    /* GRID ================================================================= */
+    .span-2-600 { grid-column: span 2; }
+    .span-3-600 { grid-column: span 3; }
+    .span-4-600 { grid-column: span 4; }
+    .span-5-600 { grid-column: span 5; }
+    .span-6-600 { grid-column: span 6; }
+    .span-7-600 { grid-column: span 7; }
+    .span-8-600 { grid-column: span 8; }
+    .span-9-600 { grid-column: span 9; }
+    .w-50-600   { width: 50%; }
+
+    /* FOOTER =============================================================== */
+    .footer--inner  { flex-direction: row-reverse; }
+    .footer-nav     { justify-content: end; }
+}
+
+/* ========================================================================== */
+/* 700px and above */
+
+@media only screen
+and (min-width: 700px) {
+
+    /* GRID ================================================================= */
+    .span-2-700 { grid-column: span 2; }
+    .span-3-700 { grid-column: span 3; }
+    .span-4-700 { grid-column: span 4; }
+    .span-5-700 { grid-column: span 5; }
+    .span-6-700 { grid-column: span 6; }
+    .span-7-700 { grid-column: span 7; }
+    .span-8-700 { grid-column: span 8; }
+    .span-9-700 { grid-column: span 9; }
+
+
+}
+
+/* ========================================================================== */
+/* 800px and above */
+
+@media only screen
+and (min-width: 800px) {
+
+    /* HEADER NAVIGATION ==================================================== */
+    /* Swap to visible nav */
+    .header                             { padding: 0 var(--gutter); }
+    .header-logo                        { margin: 0; }
+    
+    .header-child-toggle,
+    .site-overlay,
+    .menu-btn-wrap, .pushy-home         { display: none !important; }
+
+    .pushy                              { background: transparent; height: auto; padding: 0; overflow: visible; position: static; width: auto; }
+    .pushy-content                      { visibility: visible; }
+    .pushy-right, .pushy-left           { -webkit-transform: translate3d(0, 0, 0); -ms-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); }
+    .site-nav                           { font-size: var(--step-nav); padding: 0; margin-right: calc(-1 * var(--s100v)); }
+    .site-nav-parent                    { display: flex; flex-wrap: wrap; justify-content: center; gap: 0; padding: 0; }
+    .site-nav-parent__li:hover > ul     { display: block; }
+    .site-nav-parent__li.has-drop-down  { transition: background-color 0.2s ease-in-out; position: relative; }
+    .site-nav-parent__li.has-drop-down:hover   { background-color: rgb(var(--fatigue-800)); }
+    .site-nav-parent__li.has-drop-down::after  { z-index: -1; content: '\f0d7'; font: var(--fa-font-solid); position: absolute; left: 0; right: 0; bottom: 0.5rem; text-align: center; transition: opacity 0.3s ease-in-out; opacity: 0.5; display: inline-block; -webkit-font-smoothing: antialiased; text-rendering: auto; }
+    .site-nav-parent__li.has-drop-down:hover::after  { opacity: 0; }
+
+
+    .site-nav-parent__a	                { color: rgb(var(--fatigue-200)); transition: color 0.3s ease-in-out; display: flex; align-items: center; min-height: 100%; line-height: 1.2; margin: 0; padding: var(--s250v) var(--s100v); position: relative; text-align: center; }
+    .site-nav-parent__a:hover           { color: rgb(var(--white)); }
+    .site-nav-parent__a::after          { position: absolute; content: ''; right: 0; top: var(--s200v); bottom: var(--s200v); width: 1px; background-color: rgb(var(--fatigue-800)); }
+    .site-nav-parent__a.omega           { color: rgb(var(--white)); }
+    .site-nav-parent__a.omega::after    { display: none; }
+	.site-nav-parent__label > span      { display: block; }
+
+    /* Header dropdown nav */
+    .site-nav-child                  {
+        background: rgb(var(--white));
+        -webkit-background-clip: padding-box;
+        -moz-background-clip: padding;
+        background-clip: padding-box;
+        border-radius: var(--s025v);
+        box-shadow: 0 0.5rem 2rem rgba(var(--black), 0.3); 
+        display: none;
+        justify-content: center;
+        line-height: 1.2;
+        list-style-type: none;
+        left: 0;
+        margin: calc(-1 * var(--s150v)) 0 0 0;
+        padding: 0;
+        position: absolute;
+        top: 100%;
+        width: 16rem;
+        z-index: 10001;
+        -webkit-animation: fade 0.5s;
+        animation: fade 0.5s;
+    }
+	
+    .site-nav-child__li		        { position: relative; z-index: 2; }
+	.site-nav-child__a              { border: 0; color: rgb(var(--fatigue-700)); display: block; margin: 0; padding: 1rem; text-decoration: none; transition: background-color 0.25s ease-in-out; width: 100%; }
+	.site-nav-child__a:hover        { background-color: rgba(var(--accent), 0.5); color: rgb(var(--fatigue-975)); opacity: 1; }
+
+    /* GRID ================================================================= */
+    .span-2-800 { grid-column: span 2; }
+    .span-3-800 { grid-column: span 3; }
+    .span-4-800 { grid-column: span 4; }
+    .span-5-800 { grid-column: span 5; }
+    .span-6-800 { grid-column: span 6; }
+    .span-7-800 { grid-column: span 7; }
+    .span-8-800 { grid-column: span 8; }
+    .w-25-800   { width: 25%; }
+    .w-17-800   { width: calc(100% / 6); }
+
+    /* REVIEWS ============================================================== */
+    .review-item--col { width: 50%; }
+    .review-item--col.alpha { padding-right: var(--s400v); text-align: center; }
+
+    /* FOOTER =============================================================== */
+    .footer-nav     { gap: var(--s600v); }
+
+}
+
+/* ========================================================================== */
+/* 1000px and above */
+
+@media only screen
+and (min-width: 1000px) {
+
+    /* GRID ================================================================= */
+    .span-2-1000 { grid-column: span 2; }
+    .span-3-1000 { grid-column: span 3; }
+    .span-4-1000 { grid-column: span 4; }
+    .span-5-1000 { grid-column: span 5; }
+    .span-6-1000 { grid-column: span 6; }
+    .span-7-1000 { grid-column: span 7; }
+    .span-8-1000 { grid-column: span 8; }
+    .w-75-1000   { width: 75%; }
+    .w-50-1000   { width: 50%; }
+    .w-17-1000   { width: calc(100% / 6); }
+
+    /* HEADER =============================================================== */
+    .header-logo                        { height: 4rem; width: 15rem; }
+    .site-nav                           { margin-right: calc(-1 * var(--s150v)); }
+    .site-nav-parent__a                 { padding-left: var(--s150v); padding-right: var(--s150v); }
+
+    /* PAGE TITLE =========================================================== */
+    .page-title--inner.has-img          { margin-top: var(--s600v); }
+    .lead-img--wrap                     { border-top-left-radius: var(--s200v); }
+
+    /* FEATURE ============================================================== */
+    .bullets    { flex-wrap: nowrap; }
+    .bullet     { display: block; flex-basis: 0; flex-grow: 1; flex-shrink: 0; } 
+    .bullet img { margin-bottom: var(--s100v); }
+    
+    /* SERVICES PORTAL ====================================================== */
+    .portal--title      { padding: var(--s200v); padding-bottom: var(--s100v); }
+    .portal--read-label { padding: 0 var(--s200v) var(--s200v) var(--s200v); }
+    .portal--ul .omegas .portal--title { font-size: 1.375rem; font-size: var(--step-2); }
+
+    /* GALLERY / THUMBS ===================================================== */
+    .gallery-item {
+        grid-column: span 3;
+
+    }
+    .gallery-item:nth-child(5n+1),
+    .gallery-item:nth-child(5n+6) {
+        grid-column: span 6;
+    }
+
+
+}
+
+/* ========================================================================== */
+/* 1100px and above */
+
+@media only screen
+and (min-width: 1100px) {
+
+
+}
+
+/* ========================================================================== */
+/* 1200px and above */
+
+@media only screen
+and (min-width: 1200px) {
+
+    /* GRID ================================================================= */
+    .span-2-1200 { grid-column: span 2; }
+    .span-3-1200 { grid-column: span 3; }
+    .span-4-1200 { grid-column: span 4; }
+    .span-6-1200 { grid-column: span 6; }
+    .span-8-1200 { grid-column: span 8; }
+    .w-50-1200   { width: 50%; }
+    .w-12-1200   { width: calc(100% / 8); }
+
+    /* HEADER =============================================================== */
+    .header-logo                        { height: 4.5rem; width: 16.875rem; }
+    .site-nav                           { margin-right: calc(-1 * var(--s200v)); }
+    .site-nav-parent__a                 { padding-left: var(--s200v); padding-right: var(--s200v); }
+
+    /* PAGE TITLE =========================================================== */
+    .page-title--inner.has-img          { margin-top: var(--s300v); }
+
+}
+
+/* ========================================================================== */
+/* 1400px and above */
+
+@media only screen
+and (min-width: 1400px) {
+
+    /* SERVICES PORTAL ====================================================== */
+    .portal--ul    { gap: var(--s400v) var(--s200v) }
+    .portal--title { padding: var(--s250v); padding-bottom: var(--s100v); }
+    .portal--read-label { padding: 0 var(--s250v) var(--s250v) var(--s250v); }
+
+    
+}
