@@ -1,0 +1,376 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1">
+    
+    <title>CarpenterMeghannB </title>
+    <meta name="description" content="Imagination to Reality carpentry for homeowners who value thoughtful craftsmanship. Based in Prince Rupert.">
+    <meta name="robots" content="">
+
+    <link href="/styles.css" rel="stylesheet">
+    <link href="/resp.css" rel="stylesheet">
+    <link href="/fontawesome.min.css.css" rel="stylesheet">
+    <link href="/solid.min.css" rel="stylesheet">
+
+    <link rel="canonical" href="https://donnellywoodworking.ca"> <!-- URL ADDRESS -->
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+    <link rel="manifest" href="/assets/favicons/site.webmanifest">
+    <link rel="mask-icon" href="/assets/favicons/safari-pinned-tab.svg" color="#3E4936">
+    <link rel="shortcut icon" href="/assets/favicons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#3E4936">
+    <meta name="msapplication-config" content="/assets/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#3E4936">
+    
+
+    <meta property="og:title" content="Home • Carpenter Meghann B">
+    <meta property="og:description" content="Imagination to reality helping homeowners create beautiful spaces.">
+    <meta property="og:image" content="https://donnellywoodworking.ca/assets/img/social.jpg"> <!--  COLORED SOCIAL LOGO/IMAGE -->
+    <meta property="og:url" content="https://CarpenterMeghannB.ca">  <!-- URL ADDRESS -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Carpenter Meghann B">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Carpenter Meghann B">
+    <meta name="twitter:description" content="Imagination to reality helping homeowners create beautiful spaces.">
+    <meta name="twitter:image" content="https://donnellywoodworking.ca/assets/img/social.jpg"> <!-- COLORED SOCIAL LOGO/IMAGE -->
+
+</head>
+
+<body id="top" class="[ home-page ] pos-rel noise">
+<header class="[ header ] bg-fatigue-925">
+    <div class="[ header-inner ] flex flex-wrap justify-space align-center mauto-lr">
+        
+        <div class="[ header-logo ]">
+            <a href="https://CarpenterMeghannB.ca"> <!-- URL ADDRESS -->
+                
+               <!--
+                LOGO IN WHITE (Top Left corner)
+               --> 
+                
+               <img src="https://donnellywoodworking.ca/assets/img/donnelly-woodworking-logo-white.svg" width="240" height="64" alt="Donnelly&#x20;Woodworking">
+            </a>
+
+        </div>
+        <div class="[ header-nav-group ]">
+            <div class="[ menu-btn-wrap ] text-l text-center">
+                <button class="[ menu-btn ] btn">
+                <svg class="[ menu-btn-icon ] mauto transition-all" viewBox="0 0 60 40" width="40" height="20">
+                    <rect y="0" width="60" height="2"></rect>
+                    <rect y="s16" width="60" height="2"></rect>
+                </svg>
+        
+                <span class="menu-btn-label block text-s font-primary-500">MENU</span></button>
+            </div>
+            <nav class="[ header-nav-inner ] lh125 pushy pushy-left" aria-label="Header">
+                <div class="[ pushy-content ]">
+                    <a class="pushy-home" href="/"><span class="screen-reader-text">Home</span></a>
+                    <nav class="[ site-nav ] p100v">
+    <ul class="[ site-nav-parent ] list-none m0 p0">
+                                    <li class="[ site-nav-parent__li ] block pushy-submenu">
+                    <a class="[ site-nav-parent__a ] block no-bdr p100v pushy-link pos-rel" href="/services.html">
+                        <span class="[ site-nav-parent__label ]">
+                            Carpentry <span class="block">Services</span>                        </span>
+                    </a>
+            
+                
+                    <ul class="[ site-nav-child ] list-none m0 p0 p100v-l">
+         
+                                                    <li class="[ site-nav-child__li ] pushy-link block">
+                                <a class="[ site-nav-child__a ] block no-bdr fatigue-300 p100v" href="/windows-doors.html">
+                                    Windows & Doors                               </a>
+                            </li>
+                                                    <li class="[ site-nav-child__li ] pushy-link block">
+                                <a class="[ site-nav-child__a ] block no-bdr fatigue-300 p100v" href="/decks-fences-gates.html">
+                                    Decks, Fences, Gates & Railings                                </a>
+                            </li>
+                                                    <li class="[ site-nav-child__li ] pushy-link block">
+                                <a class="[ site-nav-child__a ] block no-bdr fatigue-300 p100v" href="/siding-stairs.html">
+                                    Exterior Siding & Stairs                                </a>
+                            </li>
+                                                    <li class="[ site-nav-child__li ] pushy-link block">
+                                <a class="[ site-nav-child__a ] block no-bdr fatigue-300 p100v" href="interior-reno.html">
+                                    Interior Design & Remodelling                             </a>
+                            </li>
+                                                    <li class="[ site-nav-child__li ] pushy-link block">
+                                <a class="[ site-nav-child__a ] block no-bdr fatigue-300 p100v" href="concrete.html">
+                                    Concrete & Masonry                               </a>
+                            </li>
+                                                    <li class="[ site-nav-child__li ] pushy-link block">
+                                <a class="[ site-nav-child__a ] block no-bdr fatigue-300 p100v" href="DIY.html">
+                                    DIY Guidance & Consultation                             </a>
+                            </li>
+                                            </ul>
+
+                </li>
+                                                <li class="[ site-nav-parent__li ] block">
+                    <a class="[ site-nav-parent__a ] block no-bdr p100v pushy-link pos-rel" href="/about.html">
+                        <span class="[ site-nav-parent__label ]">
+                            About Meghann                       </span>
+                    </a>
+            
+                                                    <li class="[ site-nav-parent__li ] block">
+                    <a class="[ site-nav-parent__a ] block no-bdr p100v pushy-link pos-rel" href="/portfolio.html">
+                        <span class="[ site-nav-parent__label ]">
+                            Portfolio                        </span>
+                    </a>
+            
+                                                    <li class="[ site-nav-parent__li ] block">
+                    <a class="[ site-nav-parent__a ] block no-bdr p100v pushy-link pos-rel" href="/articles.html">
+                        <span class="[ site-nav-parent__label ]">
+                            Thoughts                        </span>
+                    </a>
+            
+                                                    <li class="[ site-nav-parent__li ] block">
+                    <a class="[ site-nav-parent__a ] block no-bdr p100v pushy-link pos-rel omega" href="/contact.html">
+                        <span class="[ site-nav-parent__label ]">
+                            Get in <span class="block">Touch</span>                        </span>
+                    </a>
+            
+                        
+    </ul>
+</nav>
+
+
+                </div>
+            </nav><!--* header-nav-inner *-->
+            <div class="site-overlay none abs0"></div>
+        </div><!--* header-nav-group *-->
+        <!--* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ *-->
+
+    </div>
+
+</header>
+
+<!-- MAIN WEBSITE -->
+
+
+
+<main id="main" class="[ main ] block pos-rel z1">
+            
+                    
+<div class="[ page-title ] gutter pos-rel p900v-t | bg-fatigue-925 overflow-hide">
+                    <div class="[ lead-img--wrap ] overflow-hide shadow-soft pos-abs abs0-t abs0-b abs0-r z1 bg-black w-100 w-75-1000 w-50-1200">
+            <img class="[ lead-img--img ] pos-abs abs0 z1 h-100 w-100 fit-cover op80" src="/images/portfolio//MeghannBG" alt="">
+        </div>
+                <div class="[ page-title--inner ] max-wide pos-rel z2 grid-12 gap-2 has-img m900v-t">
+        <h1 class="[ page-title--h1 ] balance ls--1 span-12 lh-09">
+            Meet Meghann        </h1>
+        
+                <div class="pos-rel span-12 grid-12 gap-1">
+            <div class="[ page-intro ] bdr bdr-b0 bdr-fatigue-700 shadow-soft noise text-m rad-xxs rad-t lh-15 m0-first m0-last font-primary-400 | p300v-l p300v-r p200v-t p200v-b colour-change-em bg-fatigue-900 | span-12 span-10-500 span-8-700">
+    <p>I&#8217;m the owner, the carpenter, the bookkeeper and the project manager; a Red Seal Carpenter and a woodworker with over twenty years of industry experience. <em>My name is Meghann Barsalou, and and I&#8217;m pleased to meet you!</em></p></div>
+        </div>
+        
+        
+    </div>
+</div>        
+        
+            
+    <section class="[ layout__row ] pos-rel z2  gutter p800v-t p400v-b strip-bdr" id="71a15fd6-28f0-4c7b-ba79-ae43cb60eab0">
+        <div class="[ layout__row-inner ] max-thin mauto-lr">
+                                                <div class="[ block__heading ]">
+                        
+<h2 class="h2 text-xl">
+    My approach</h2>                    </div>
+                                    <div class="[ block__text ]">
+                        
+<div class="m0-first m0-last">
+    <p>I suppose I should tell you what I excel at.</p><p>Perhaps that I specialize in thinking outside the box. That I strive to craft seamless transitions and achieve a soothing visual balance in every project.</p><p>That exceptional fit and finish are paramount to me, and that every detail is executed with precision.</p><p>And how I take <em>pride</em> in my design and execution, and don't believe in taking shortcuts.</p><p>But the most important thing I want to share?</p><p><em>I care.</em></p></div>                    </div>
+                                    </div>
+    </section><!-- /layout__row -->
+
+                
+    <section class="[ layout__row ] pos-rel z2  gutter p0v-t p0v-b strip-bdr" id="df8946ee-6dfa-4e53-8a27-f2de1d3b2d44">
+        <div class="[ layout__row-inner ] max-wide mauto-lr">
+                                                <div class="[ block__gallery ]">
+                        
+<figure>
+	<ul class="block__gallery-ul list-none m0 p0 flex flex-wrap align-center justify-center gap-200">
+					<li class="block__gallery-li w-33__gap-200">
+				<img class="block__gallery-img block rad-s" src="/images/portfolio/MeghannHammer.jpg" alt="" style="--ratio:4/5"  data-crop data-ratio="4/5">
+			</li>
+					<li class="block__gallery-li w-33__gap-200">
+				<img class="block__gallery-img block rad-s" src="/images/portfolio/MeghannByFence.jpg" alt="" style="--ratio:4/5"  data-crop data-ratio="4/5">
+			</li>
+					<li class="block__gallery-li w-33__gap-200">
+				<img class="block__gallery-img block rad-s" src="/images/portfolio//kidsworkshop.jpg" alt="" style="--ratio:4/5"  data-crop data-ratio="4/5">
+			</li>
+			</ul>
+	</figure>                    </div>
+                                    </div>
+    </section><!-- /layout__row -->
+
+                
+    <section class="[ layout__row ] pos-rel z2  gutter p400v-t p0v-b strip-bdr" id="6a3bff7c-0949-4982-88cb-de9c951d2784">
+        <div class="[ layout__row-inner ] max-thin mauto-lr">
+                                                <div class="[ block__heading ]">
+                        
+<h2 class="h2 text-xl">
+
+    Functional design.<br>Artisan quality.<br>Heartfelt care.</h2>                    </div>
+                                    <div class="[ block__text ]">
+                        
+<div class="m0-first m0-last">
+    <p><em>I cannot express enough that I honestly care for the product I produce.</em></p><p>Intention, mindfulness, and care are values ingrained in my work ethic, and reflected in the final outcome of the projects I undertake.</p><p>It is not <em>just</em> about creating a functional and aesthetically-pleasing object, but also ensuring that it is crafted with intention and attention to detail.</p></div>                    </div>
+                                    <div class="[ block__quote ]">
+                        <blockquote class="rad-xs">
+    <div class="m0-first m0-last">
+    👉 The <a href="/@/page/MoxOQfngrGSA4EHn">Thoughts section</a> of this site includes a variety of articles that take a deeper look into the values that govern my work.    </div>
+    </blockquote>                    </div>
+                                    <div class="[ block__heading ]">
+                        
+<h3 class="h3 text-l">
+    Technical skills?<br>You bet!</h3>                    </div>
+                                    <div class="[ block__text ]">
+                        
+<div class="m0-first m0-last">
+    <p>I am trained in modern methods (I'm a <a href="https://www.red-seal.ca/eng/trades/c.1rp.2nt.2r.shtml" target="_blank" title="Learn more about Red Seal trained carpenters">Red Seal carpenter</a> with 20+ years on the job), but also have an extensive skill set.</p><p>Through my form-to-finish experience in custom residential construction, I am able to achieve both a contemporary and a traditional style.</p><p>But trust me when I say, with the <em>upmost respect</em> for the technical skill involved, that <em>anyone</em> can achieve these skills.</p></div>                    </div>
+                                    <div class="[ block__heading ]">
+                        
+<h3 class="h3 text-l">
+    Really though,<br>it's all about care</h3>                    </div>
+                                    <div class="[ block__text ]">
+                        
+<div class="m0-first m0-last">
+    <p>What sets me apart is not just the <em>technical</em> skills I possess, but the <em>manner</em> in which I execute them.</p><p>Again I come back to the <strong>care and sincerity</strong> that I infuse into my work. Mindfulness. <em>Intention</em>. From the initial design phase to the final touches, I choose to deliver these values in every project I take on.</p><p>Because it's not merely about completing a <em>job</em>, but about creating something that <strong>brings joy into the world</strong> and stands as a testament to my commitment to quality craftsmanship.</p><ul><li><p>I can work with <strong>all manner of budgets</strong></p></li><li><p>I can build in <strong>a wide range of styles</strong></p></li><li><p>I can <strong>collaborate closely</strong> <em>or</em> <strong>take the lead</strong></p></li></ul></div>                    </div>
+                                    <div class="[ block__heading ]">
+                        
+<h3 class="h3 text-xl">
+    Work with a carpenter<br>who cares</h3>                    </div>
+                                    <div class="[ block__text ]">
+                        
+<div class="m0-first m0-last">
+    <p>Through <em>Donnelly Woodworking</em> I have be able to move away from the “splash and dash” model that's become the carpentry industry standard.</p><p>Whether it's a built-in bookcase or a personal backyard sanctuary, your project will be handled with the <strong>utmost care.</strong></p><p>If this sounds like a working relationship that resonates with your own values, I would love to discuss your project.</p><p>Reach out, <a href="/contact">book a quote</a>, and let's build something special.</p><p><strong>–</strong> Liam Donnelly</p></div>                    </div>
+                                    </div>
+    </section><!-- /layout__row -->
+
+
+
+
+    <section class="[ footer-cta ] gutter p600v-t p600v-b pos-rel overflow-hide bg-fatigue-950">
+        <div class="[ footer-cta--inner ] max-wide m0-first m0-last pos-rel z3">
+            <div class="[ footer-cta--copy ] max-thin m0-l m0-r">
+                <h2 class="[ footer-cta--title ] font-secondary-400 lh-14 text-l m200v-b colour-change-em balance">Quality craftsmanship is my lifestyle. <br> <em>It’s how I show up in this world, slow down, and remain mindful in the moment.</em></h2>
+                <footer class="[ footer-cta--footer ] pos-rel flex align-center max-tiny m0-l m0-r p200v-t">
+                    <img class="[ footer-cta--img ] block pos-rel z3 h-auto rad-50 m200v-r" width="100" height="100" src="/images/iconheadshot.jpg" alt="Portrait of CarpenterMeghannB smiling">
+                    <div class="[ footer-cta--btns ] text-center lh-133">
+                        <a class="btn btn-block btn-bright" href="/contact">Book a quote!</a>
+                        <a class="no-bdr inline-block m100v-t fatigue-300" href="tel:+1-250-638-5440"><span class="nobr">Or call</span> 250.638.5430</a>                </div>
+                </footer>
+            </div>
+        </div>
+
+        
+    </main>
+
+
+<!-- Book Now-->
+
+
+
+<section class="[ footer-cta ] gutter p600v-t p600v-b pos-rel overflow-hide bg-fatigue-950">
+    <div class="[ footer-cta--inner ] max-wide m0-first m0-last pos-rel z3">
+        <div class="[ footer-cta--copy ] max-thin m0-l m0-r">
+            <h2 class="[ footer-cta--title ] font-secondary-400 lh-14 text-l m200v-b colour-change-em balance">Quality craftsmanship is my lifestyle. <br> <em>It’s how I show up in this world, slow down, and remain mindful in the moment.</em></h2>
+            <footer class="[ footer-cta--footer ] pos-rel flex align-center max-tiny m0-l m0-r p200v-t">
+                <img class="[ footer-cta--img ] block pos-rel z3 h-auto rad-50 m200v-r" width="100" height="100" src="/images/iconheadshot.jpg" alt="Portrait of CarpenterMeghannB smiling">
+                <div class="[ footer-cta--btns ] text-center lh-133">
+                    <a class="btn btn-block btn-bright" href="/contact">Book a quote!</a>
+                    <a class="no-bdr inline-block m100v-t fatigue-300" href="tel:+1-250-638-5440"><span class="nobr">Or call</span> 250.638.5430</a>                </div>
+            </footer>
+        </div>
+    </div>
+
+
+    <!-- FOOTER NAV -->
+
+    <div class="[ logo-stamp ] flex justify-end overflow-hide pos-abs abs0-t abs0-r abs0-b w-75 w-50-1000 h-100 z1">
+        <img class="[ logo-stamp--img ] h-100" src="/assets/img/dw-monogram-footer.svg?v=1" alt="">
+    </div>
+</section><hr class="m0 bg-fatigue-900 w-100">
+<footer class="[ footer ] bg-fatigue-925 text-s gutter p400v-t p300v-b noise">
+    <div class="[ footer--inner ] m0-first m0-last max-wide flex flex-wrap">
+
+        <div class="[ footer-nav ] flex w-100 w-50-600 gap-400">
+                <nav class="[ footer-nav--nav ] text-s">
+                    <h4 class="[ footer-nav--heading ] text-s uppercase m0-t ls-1 fatigue-600">Services</h4>
+                <li class="[ footer-nav--li ] m050v-t">
+                    <a class="[ footer-nav--link ] inline-block no-bdr" href="/windows-doors.html">
+                        Windows & Doors                  </a>
+                </li>
+                            <li class="[ footer-nav--li ] m050v-t">
+                    <a class="[ footer-nav--link ] inline-block no-bdr" href="/decks-fences-gates.html">
+                        Decks, Fences, Gates & Railings                  </a>
+                </li>
+                            <li class="[ footer-nav--li ] m050v-t">
+                    <a class="[ footer-nav--link ] inline-block no-bdr" href="/siding-stairs.html">
+                        Exterior Siding & Stairs                </a>
+                </li>
+                            <li class="[ footer-nav--li ] m050v-t">
+                    <a class="[ footer-nav--link ] inline-block no-bdr" href="/interior-reno.html">
+                        Interior Design & Remodelling                  </a>
+                </li>
+                            <li class="[ footer-nav--li ] m050v-t">
+                    <a class="[ footer-nav--link ] inline-block no-bdr" href="/concrete.html">
+                        Concrete & Masonry                   </a>
+                </li>
+
+                            <li class="[ footer-nav--li ] m050v-t">
+                    <a class="[ footer-nav--link ] inline-block no-bdr" href="/DIY.html">
+                       DIY Guidance & Consultation                    </a>
+                </li>
+
+                    </ul>
+    </nav>
+ 
+                <nav class="[ footer-nav--nav ] text-s">
+                    <h4 class="[ footer-nav--heading ] text-s uppercase m0-t ls-1 fatigue-600">Explore</h4>
+                <ul class="[ footer-nav--ul ] list-none m0 p0 lh-125">
+
+                    <li class="[ footer-nav--li ] m050v-t">
+                        <a class="[ footer-nav--link ] inline-block no-bdr" href="/Meet-Meghann">
+                            Meet Meghann                   </a>
+                    </li>
+                            <li class="[ footer-nav--li ] m050v-t">
+                    <a class="[ footer-nav--link ] inline-block no-bdr" href="/portfolio.html">
+                        Portfolio                    </a>
+                    </li>
+                            <li class="[ footer-nav--li ] m050v-t">
+                    <a class="[ footer-nav--link ] inline-block no-bdr" href="/articles.html">
+                        Thoughts                    </a>
+                   </li>
+                            <li class="[ footer-nav--li ] m050v-t">
+                    <a class="[ footer-nav--link ] inline-block no-bdr" href="/contact.html">
+                        Get in Touch                    </a>
+                </li>
+                    </ul>
+    </nav>
+ 
+        </div>
+
+        <div class="[ footer-logo ] w-100 w-50-600 align-self-end">
+            <div class="[ footer-logo--wrap ] m100v-b">
+                <a class="[ footer-logo--link ] inline-block no-bdr" href="/home.html">
+                    <img class="[ footer-logo--img ]" src="/home.html" width="240" height="64" alt="Donnelly&#x20;Woodworking">
+                </a>
+                                    <div class="[ footer-logo--copy ] m0-first m0-last fatigue-300 m050v-t"><p><em>Proudly offering carpentry services<br> for Prince Rupert and North Coast BC homes</em></p></div>
+                            </div>
+            <div class="fatigue-600">
+                <p class="m0">&copy; 2025 CarpenterMeghannB</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="/jquery.min.js"></script>
+<script src="/plugins.js"></script>
+
+
+</body>
+</html>

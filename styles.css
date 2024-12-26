@@ -1089,6 +1089,7 @@ blockquote.quote--blockquote {
 .accordion-faq--question {
 	position: relative;
 	padding-right: 100px;
+	
 }
 
 .accordion-faq--question::after {
