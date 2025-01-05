@@ -14,7 +14,7 @@
 	/* #9acd32 */ --accent: 241, 250, 238; /*footer highlight, links highlight, and book now BG, nav bar */
 	/* #000000 */ --highlight: 230, 57, 70; /* ?? */
 
-    /* #4a483d */   --fatigue: 230, 57, 70;
+    /* Color Scheme */   --fatigue: 230, 57, 70;
 
                     --fatigue-050:  238, 239, 237;
                     --fatigue-100:  241, 250, 238; /* main text and header */
@@ -93,32 +93,9 @@
 	--max-tiny: 25rem;
 }
 
-/* -------------------------------------------------------------------------- */
-/* FONTS
-/* -------------------------------------------------------------------------- */
-
-/* Primary Font (Supreme) ----------------- */
-@font-face { font-family: 'font-primary'; src: url('/assets/fonts/supreme/supreme-400.woff2') format('woff2'), url('/assets/fonts/supreme/supreme-400.woff') format('woff'), url('/assets/fonts/supreme/supreme-400.ttf') format('truetype'); font-weight: 400; font-style: normal; }
-.font-primary-400 { font-family: 'font-primary', sans-serif; font-style: normal; font-weight: 400; }
-@font-face { font-family: 'font-primary'; src: url('/assets/fonts/supreme/supreme-400-italic.woff2') format('woff2'), url('/assets/fonts/supreme/supreme-400-italic.woff') format('woff'), url('/assets/fonts/supreme/supreme-400-italic.ttf') format('truetype'); font-weight: 400; font-style: italic; }
-.font-primary-400i, em { font-family: 'font-primary', sans-serif; font-style: italic; font-weight: 400; }
-@font-face { font-family: 'font-primary'; src: url('/assets/fonts/supreme/supreme-500.woff2') format('woff2'), url('/assets/fonts/supreme/supreme-500.woff') format('woff'), url('/assets/fonts/supreme/supreme-500.ttf') format('truetype'); font-weight: 500; font-style: normal; }
-.font-primary-500 { font-family: 'font-primary', sans-serif; font-style: normal; font-weight: 500; }
-@font-face { font-family: 'font-primary'; src: url('/assets/fonts/supreme/supreme-500-italic.woff2') format('woff2'), url('/assets/fonts/supreme/supreme-500-italic.woff') format('woff'), url('/assets/fonts/supreme/supreme-500-italic.ttf') format('truetype'); font-weight: 500; font-style: italic; }
-.font-primary-500i { font-family: 'font-primary', sans-serif; font-style: italic; font-weight: 500; }
-@font-face { font-family: 'font-primary'; src: url('/assets/fonts/supreme/supreme-700.woff2') format('woff2'), url('/assets/fonts/supreme/supreme-700.woff') format('woff'), url('/assets/fonts/supreme/supreme-700.ttf') format('truetype'); font-weight: 700; font-style: normal; }
-.font-primary-700, strong { font-family: 'font-primary', sans-serif; font-style: normal; font-weight: 700; }
-@font-face { font-family: 'font-primary'; src: url('/assets/fonts/supreme/supreme-700-italic.woff2') format('woff2'), url('/assets/fonts/supreme/supreme-700-italic.woff') format('woff'), url('/assets/fonts/supreme/supreme-700-italic.ttf') format('truetype'); font-weight: 700; font-style: italic; }
-.font-primary-700i, strong em, em strong { font-family: 'font-primary', sans-serif; font-style: italic; font-weight: 700; }
-
-/* Secondary Font (Montagu Slab) ----------------- */
-@font-face { font-family: 'font-secondary'; src: url('/assets/fonts/montagu-slab/montagu-slab-400.woff2') format('woff2'), url('/assets/fonts/montagu-slab/montagu-slab-400.woff') format('woff'), url('/assets/fonts/montagu-slab/montagu-slab-400.ttf') format('truetype'); font-weight: 400; font-style: normal; }
-.font-secondary-400 { font-family: 'font-secondary', sans-serif; font-style: normal; font-weight: 400; }
-@font-face { font-family: 'font-secondary'; src: url('/assets/fonts/montagu-slab/montagu-slab-600.woff2') format('woff2'), url('/assets/fonts/montagu-slab/montagu-slab-600.woff') format('woff'), url('/assets/fonts/montagu-slab/montagu-slab-600.ttf') format('truetype'); font-weight: 600; font-style: normal; }
-.font-secondary-600 { font-family: 'font-secondary', sans-serif; font-style: normal; font-weight: 600; }
 
 /* -------------------------------------------------------------------------- */
-/* RESET
+
 /* -------------------------------------------------------------------------- */
 
 *, *::before, *::after {
@@ -237,7 +214,7 @@ hr {
 	--gap: calc(var(--s200v) * 5 / 6);
 	width: calc(100% / 6 - var(--gap));
 }
-.w-20__gap-200 {span
+.w-20__gap-200 {
 	--gap: calc(var(--s200v) * 4 / 5);
 	width: calc(100% / 5 - var(--gap));
 }
@@ -389,20 +366,31 @@ hr {
 .p900v	{ padding: var(--s900v) }   .p900v-l { padding-left: var(--s900v) }   .p900v-r { padding-right: var(--s900v) }   .p900v-t { padding-top: var(--s900v) }   .p900v-b { padding-bottom: var(--s900v) }
 
 
-/* -------------------------------------------------------------------------- */
-/* TYPOGRAPHY
-/* -------------------------------------------------------------------------- */
 
 
 
-/* -------------------------- main page rainbow animation --------------------------- */
+
+
+
+
+
+
+
+
+
+/* -----------------------------------TYPOGRAPHY--------------------------------------- */
+
+
+
+
+/* -------------------------- INDEX PAGE RAINBOW ANIMATION --------------------------- */
 
 
 #rainbow span {
-    animation: colorChange 25s infinite;
+    animation: colorChange 40s infinite;
     animation-fill-mode: forwards;
     animation-delay: 3s; /* Delay before starting the animation */
-    letter-spacing: -8px; /* Reduce spacing between letters */
+    letter-spacing: -6px; /* Reduce spacing between letters */
   }
   
   #rainbow span:nth-child(1) { animation-delay: 5100ms; /* Initial delay */ }
@@ -448,14 +436,6 @@ hr {
   }
   
   
-  
-
-
-
-
-
-
-
 
 
 
@@ -964,6 +944,7 @@ a:active	{ color: rgb(var(--white)); }
 	margin-right: calc(-.6 * var(--step-6));
 	margin-top: var(--s100v);
 	transform: rotate(20deg);
+	opacity: 8%;
 }
 
 .landing-logo--img {
@@ -1068,22 +1049,7 @@ a:active	{ color: rgb(var(--white)); }
 	height: 100%;
 }
 
-
-/* -------------------------------------------------------------------------- */
-/* layout -> quote block / liam quotes */
-
-blockquote.quote--blockquote {
-	border: 0;
-	margin: 0;
-	padding: 0;
-}
-
-/* -------------------------------------------------------------------------- */
-/* layout -> grouped FAQs listing */
-
-
-
-/* -------------------------------------------------------------------------- */
+/* ------------------------------layout -> accordion FAQs-------------------------------------------- */
 /* layout -> accordion FAQs */
 
 .accordion-faq--question {
@@ -1402,18 +1368,6 @@ blockquote.quote--blockquote {
 	padding: 7px 0;
 }
 
-.footer-cta--footer::after {
-	content: '';
-	left: 0;
-	right: 0;
-	width: 100%;
-	background: transparent url('/assets/img/speech.svg') no-repeat left top;
-	background-size: 100% 100%;
-	position: absolute;
-	height: 30px;
-	top: -0.75rem;
-	z-index: 2;
-}
 
 /* -------------------------------------------------------------------------- */
 /* HELPERS
