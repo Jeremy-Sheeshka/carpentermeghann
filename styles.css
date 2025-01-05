@@ -594,8 +594,8 @@ a:active	{ color: rgb(var(--white)); }
 .btn-dark:hover  				{ background-color: rgb(var(--fatigue-700)); border-color: rgb(var(--fatigue-700)); color: rgb(var(--white)); }
 
 .btn-darker {
-	background-color: rgb(var(--fatigue-975));
-	border-color: rgb(var(--fatigue-900)); 
+	background-color: rgb(var(--fatigue-925));
+	border-color: rgb(var(--fatigue-700)); 
 	color: rgb(var(--white));
 }
 .btn-darker:hover  				{ background-color: rgb(var(--fatigue-800)); border-color: rgb(var(--fatigue-800)); color: rgb(var(--white)); }
