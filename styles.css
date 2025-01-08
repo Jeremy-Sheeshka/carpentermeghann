@@ -1106,7 +1106,36 @@ a:active	{ color: rgb(var(--white)); }
 }
 
 /* -------------------------------------------------------------------------- */
-/* layout -> reviews listing */
+/* layout -> Meet-me Afilliations logos & BIO*/
+.logos {
+    display: flex;
+    justify-content: space-around; /* Evenly spaces the images */
+    align-items: center;
+    flex-wrap: nowrap; /* Ensures the images stay in a single row */
+    width: auto; /* Fits the container to the content */
+}
+
+.logos a {
+    display: block;
+    margin: 0 20px; /* Adds unclickable space between images */
+	height: auto;
+}
+
+.logos img {
+    display: block;
+    width: auto; /* Adjust the width to fit the content */
+    height: 100px; /* Set an appropriate height */
+}
+
+
+
+.signature-bio { flex: 0 0 70%; /* 70% of the container's width */
+	 height: auto;
+	 } 
+	 
+.headshot-bio-photo { flex: 0 0 20%; /* 30% of the container's width */ 
+	height: auto;
+ }
 
 /* -------------------------------------------------------------------------- */
 /* layout -> feature */
