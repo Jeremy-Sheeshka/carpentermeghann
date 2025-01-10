@@ -307,14 +307,70 @@
 
 </main>
 
+
 <!-- Book Now-->
 
 
 <section class="[ footer-cta ] gutter p600v-t p600v-b pos-rel overflow-hide bg-fatigue-950">
     <div class="[ footer-cta--inner ] max-wide m0-first m0-last pos-rel z3">
         <div class="[ footer-cta--copy ] max-thin m0-l m0-r">
-            <h2 class="[ footer-cta--title ] font-secondary-400 lh-14 text-l m200v-b colour-change-em balance">Quality craftsmanship is my lifestyle. <br> <em>It’s how I show up in this world, slow down, and remain mindful in the moment.</em></h2>
+            <h2 class="[ footer-cta--title ] font-secondary-400 lh-14 text-l m200v-b colour-change-em balance">
+
+
+                <div id="phraseDisplay"></div>
+            </h2>
             <footer class="[ footer-cta--footer ] pos-rel flex align-center max-tiny m0-l m0-r p200v-t">
+
+
+
+
+    <div id="phraseDisplay"></div>
+
+    <script>
+        // List of phrases
+        const phrases = [
+            "Learning is at the heart of my craft. <br><em>Every project is an opportunity to grow and excel.</em>",
+            "Leadership in carpentry means setting the standard. <br><em>I guide every project with skill and vision.</em>",
+            "Connection builds strong foundations. <br><em>I collaborate closely with clients to bring their dreams to life.</em>",
+            "Craftsmanship is my passion. <br><em>I pour my heart into each piece I create.</em>",
+            "Care and precision define my work. <br><em>Each detail is thoughtfully executed.</em>",
+            "Patience is my greatest tool. <br><em>I take the time to ensure everything is perfect.</em>",
+            "Mindfulness in every moment. <br><em>I focus on quality to create lasting beauty.</em>",
+            "Precision is key to excellence. <br><em>I measure twice and cut once, always.</em>",
+            "Quality work stands the test of time. <br><em>I build with integrity and dedication.</em>",
+            "Longevity is my promise. <br><em>My creations are built to last for generations.</em>",
+            "Heartfelt care in every project. <br><em>I treat your home as if it were my own.</em>",
+            "Crafting with purpose. <br><em>Each project reflects my commitment to excellence.</em>",
+            "Learning never stops. <br><em>I continually hone my skills to deliver the best.</em>",
+            "Leading with expertise. <br><em>I bring a wealth of knowledge to every job.</em>",
+            "Building connections, one project at a time. <br><em>Your vision is my mission.</em>",
+            "Crafted with love. <br><em>I infuse passion into every piece I create.</em>",
+         
+            "Patience and precision go hand in hand. <br><em>I never rush, always deliver.</em>",
+            "Mindful of every cut and join. <br><em>Quality craftsmanship is my lifestyle.</em>",
+            "Built to endure. <br><em>My work is a testament to quality and durability.</em>",
+            "Carefully crafted for you. <br><em>I put my heart and soul into each project.</em>",
+     
+            "Quality that speaks for itself. <br><em>My work is a reflection of my values.</em>",
+            "Craftsmanship that connects. <br><em>I build more than just structures; I build relationships.</em>",
+            "Learning through every project. <br><em>My journey is one of continuous improvement.</em>",
+            "Leadership through innovation. <br><em>I bring creativity and expertise to every job.</em>",
+            "Building with care. <br><em>I treat your home with the utmost respect.</em>",
+            "Crafting with mindfulness. <br><em>I create spaces that inspire and endure.</em>",
+
+            "Heartfelt craftsmanship. <br><em>I build with love, care, and dedication.</em>"
+        ];
+
+        // Function to display a random phrase
+        function displayRandomPhrase() {
+            const randomIndex = Math.floor(Math.random() * phrases.length);
+            document.getElementById("phraseDisplay").innerHTML = phrases[randomIndex];
+        }
+
+        // Call the function to display a phrase on page load
+        displayRandomPhrase();
+    </script>
+
                 <img class="[ footer-cta--img ] block pos-rel z3 h-auto rad-50 m200v-r" width="100" height="100" src="/images/iconheadshot.jpg" alt="Portrait of CarpenterMeghannB smiling">
                 <div class="[ footer-cta--btns ] text-center lh-133">
                     <a class="btn btn-block btn-bright" href="/contact">Book a quote!</a>
