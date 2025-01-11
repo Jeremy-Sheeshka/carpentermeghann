@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
        };
  
        let xhr = new XMLHttpRequest();
-       xhr.open('POST', 'https://carpentermeghannb.ca/'); // Ensure this URL is correct
+       xhr.open('POST', 'https://carpentermeghannb.ca/contact'); // Ensure this URL is correct
        xhr.setRequestHeader('content-type', 'application/json');
        xhr.onload = function() {
          console.log(xhr.responseText);
