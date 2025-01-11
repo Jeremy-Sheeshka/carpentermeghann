@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
    const contactForm = document.querySelector('.contact-form');
    
+   // Debugging log to check if the form is found correctly
    console.log(document.querySelector('.contact-form'));
  
    let userName = document.getElementById('name');
@@ -20,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
        };
  
        let xhr = new XMLHttpRequest();
-       xhr.open('POST', 'https://carpentermeghannb.ca' ); // Ensure this URL matches your server endpoint
+       xhr.open('POST', 'https://carpentermeghannb.ca/'); // Ensure this URL is correct
        xhr.setRequestHeader('content-type', 'application/json');
        xhr.onload = function() {
          console.log(xhr.responseText);
