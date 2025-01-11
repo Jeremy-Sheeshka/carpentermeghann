@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
        };
  
        let xhr = new XMLHttpRequest();
-       xhr.open('POST', '/');
+       xhr.open('POST', 'https://carpentermeghannbPlace the HTML, JS, and CSS Files: Ensure your index.html, app.js, and style.css are in the correct directories. Typically, the app.js and style.css would be in a public folder..ca/'); // Ensure this URL matches your server endpoint
        xhr.setRequestHeader('content-type', 'application/json');
        xhr.onload = function() {
          console.log(xhr.responseText);
