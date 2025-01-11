@@ -1,9 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
    const contactForm = document.querySelector('.contact-form');
- 
+   
    console.log(document.querySelector('.contact-form'));
-
-   // Input elements of form
+ 
    let userName = document.getElementById('name');
    let email = document.getElementById('email');
    let subject = document.getElementById('subject');
