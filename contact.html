@@ -213,8 +213,8 @@
                 
                 <!-- FORM START -->
               
-                <form name="contact"  class="[ contact-form ] rtb-form bdr bdr-fatigue-800 p300v rad-xs bg-fatigue-925 shadow-soft" netlify>
-                    <div class="row">
+                <form name="contact" method="POST" data-netlify="true" class="[ contact-form ] rtb-form bdr bdr-fatigue-800 p300v rad-xs bg-fatigue-925 shadow-soft" >
+                    
                         <label for="name">Name</label>
                         <input id="name" name="name" placeholder="Full name" type="text" value="" required>
                     </div>
@@ -223,7 +223,7 @@
                         <label for="email">Email</label>
                         <input id="email" name="email" placeholder="you@example.com" type="email" value="" required>
                     </div>
-                    
+
                     <div class="row">
                         <label for="message">Message</label>
                         <textarea placeholder="What are you looking for?" id="message" type="text" name="message" cols="30" rows="10" required></textarea>
