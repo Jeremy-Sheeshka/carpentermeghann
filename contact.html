@@ -212,35 +212,32 @@
 
                 
                 <!-- FORM START -->
-                    <form name="contact" method="POST" data-netlify="true" data-netlify-recaptcha="true" class=" rtb-form bdr bdr-fatigue-800 p300v rad-xs bg-fatigue-925 shadow-soft">
+                    <form name="contact" method="POST" data-netlify="true" data-netlify-recaptcha="true" class="rtb-form bdr bdr-fatigue-800 p300v rad-xs bg-fatigue-925 shadow-soft">
                         <input type="hidden" name="form-name" value="contact"> 
                                     
                         <div class="row">
-                            <p>
-                                <label>Your Name: <input type="text" name="name" required></label>   
-                              </p>
+                            <label for="name">Name</label>
+                            <input id="name" name="name" placeholder="Full name" type="text" value="" required>
                         </div>
                                                          
                         <div class="row">
-                            <p>
-                                <label>Your Email: <input type="email" name="email" required></label>
-                              </p>
+                            <label for="email">Email</label>
+                            <input id="email" name="email" placeholder="you@example.com" type="email" value="" required>
                         </div>
                 
-                      
+                        <div class="field">
+                            <input type="file" name="myfile" id="myfile" placeholder="Upload File" rows="7">
+                        </div>
                         <br>
-                          <p>
-                            <label>Your Message: <textarea name="message" required></textarea></label>
-                          </p>
-
-
+                        <div class="row">
+                            <label for="message">Message</label>
+                            <textarea placeholder="What are you looking for?" id="message" type="text" name="message" cols="30" rows="10" required></textarea>
+                        </div>
                         <div data-netlify-recaptcha="true"></div>
-                          <p>
-                            <button type="submit">Send Message</button>
-                          </p>
+                        <button type="submit">Send Message</button>
                     </form>
-                    
-                    
+          
+                
                 <!-- Form END-->
 
             
