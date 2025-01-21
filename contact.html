@@ -214,34 +214,10 @@
                 <!-- FORM START -->
               
 
-        
-                <form name="contact" method="POST" data-netlify="true" data-netlify-recaptcha="true" class="[ contact-form ] rtb-form bdr bdr-fatigue-800 p300v rad-xs bg-fatigue-925 shadow-soft" >
-                    <div class="row">
-                        <label for="name">Name</label>
-                        <input id="name" name="name" placeholder="Full name" type="text" value="" required>
-                    </div>
-                                         
-                    <div class="row">
-                        <label for="email">Email</label>
-                        <input id="email" name="email" placeholder="you@example.com" type="email" value="" required>
-                    </div>
-
-                    <div class="field">
-                        <input type="file" name="myfile"
-                        id="myfile" placeholder="Upload File" rows="7" />
-                    </div>
-<br>
-                    <div class="row">
-                        <label for="message">Message</label>
-                        <textarea placeholder="What are you looking for?" id="message" type="text" name="message" cols="30" rows="10" required></textarea>
-                    </div>
-                    <div data-netlify-recaptcha="true"></div>
-                    <button type="submit">Send Message</button>
-                </form>
-                
 
 
 
+                <form name="contact" method="POST" data-netlify="true"> <input type="hidden" name="form-name" value="contact"> <p> <label>Your Name: <input type="text" name="name" required></label> </p> <p> <label>Your Email: <input type="email" name="email" required></label> </p> <p> <label>Your Message: <textarea name="message" required></textarea></label> </p> <p> <button type="submit">Send</button> </p> </form>
                 <!-- Form END-->
 
             
