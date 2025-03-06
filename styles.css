@@ -420,7 +420,7 @@ hr {
   #rainbow span:nth-child(25) { animation-delay: 7500ms; }
   #rainbow span:nth-child(26) { animation-delay: 7600ms; }
   #rainbow span:nth-child(27) { animation-delay: 7700ms; }
-  #rainbow span:nth-child(28) { animation-delay: 7700ms; }
+  # span:nth-child(28) { animation-delay: 7700ms; }
 
   @keyframes colorChange {
     10% { color: white;}
