@@ -202,15 +202,57 @@
             </div>
             </div>
 
-            <div class="pos-abs abs0 z-1 overflow-hide bg-black">
+           
+        <div class="pos-abs abs0 z-1 overflow-hide bg-black">
             <div class="[] pos-abs abs0-t abs0-b abs0-l w-50" style="border-right: 0.25rem solid rgb(var(--fatigue-925))">
-                <img class="[ service--lead-img ] pos-abs abs0 h-100 w-100 op60 fit-cover" src="/images/portfolio/kitchen/kitchen1.jpg" alt="">
+                <img id="randomImage1" src=""  class="[ service--lead-img ] pos-abs abs0 h-100 w-100 op60 fit-cover">
             </div>
+
             <div class="[] pos-abs abs0-t abs0-b abs0-r w-50" style="border-left: 0.25rem solid rgb(var(--fatigue-925))">
-                <img class="[ service--lead-img ] pos-abs abs0 h-100 w-100 op60 fit-cover" src="/images/portfolio/cedarfence/fence2.jpg" alt="">
+                <img id="randomImage2" src="" class="[ service--lead-img ] pos-abs abs0 h-100 w-100 op60 fit-cover">
             </div>
         </div>
     
+
+    <script>
+        // Array of image URLs
+        const images = [
+            'https://carpentermeghannb.ca/images/portfolio/cedarfence/fence2.jpg',
+            'https://carpentermeghannb.ca/images/portfolio/kitchen/kitchen1.jpg',
+            'https://carpentermeghannb.ca/images/portfolio/cedarfence/fences.jpg',
+            'https://carpentermeghannb.ca/images/portfolio/whaleskull/whaleskulldisplay2.jpg',
+            'https://carpentermeghannb.ca/images/portfolio/retainingwall/concretewall.png',
+            'https://carpentermeghannb.ca/images/portfolio/cedar%20deck/CedarDeck.jpg',
+            'https://carpentermeghannb.ca/images/portfolio/cedarfence/fence2.jpg',
+            'https://carpentermeghannb.ca/images/portfolio/misc/stairs.jpg',
+            'https://carpentermeghannb.ca/images/portfolio/misc/exteriordoortrimandsiding.jpg',
+            'https://carpentermeghannb.ca/images/portfolio/bathfloor/linobathsink.jpg',
+            'https://carpentermeghannb.ca/images/portfolio/kitchen/kitchen1.jpg'
+         
+        ];
+
+        // Function to select a random image
+        function getRandomImage() {
+        const randomIndex = Math.floor(Math.random() * images.length);
+        return images[randomIndex];
+        }
+
+        // Select two random images
+        const randomImage1 = getRandomImage();
+        let randomImage2 = getRandomImage();
+
+         // Ensure the second image is different from the first
+        while (randomImage1 === randomImage2) {
+        randomImage2 = getRandomImage();
+        }
+
+
+        
+        // Set the random images as the src of the img elements
+        document.getElementById('randomImage1').src = randomImage1;
+        document.getElementById('randomImage2').src = randomImage2;
+
+    </script>
 
 
 </div>
