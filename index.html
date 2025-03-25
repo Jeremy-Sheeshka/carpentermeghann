@@ -220,22 +220,48 @@
             'https://carpentermeghannb.ca/images/portfolio/cedarfence/fence2.jpg',
             'https://carpentermeghannb.ca/images/portfolio/kitchen/kitchen1.jpg',
             'https://carpentermeghannb.ca/images/portfolio/cedarfence/fences.jpg',
+            'https://carpentermeghannb.ca/images/portfolio/cedarfence/cedarfencebuild.jpg',
+            'https://carpentermeghannb.ca/images/portfolio/cedarfence/cedarfencebuild2.jpg',
+            'https://carpentermeghannb.ca/images/portfolio/cedarfence/Fence3.jpg',
             'https://carpentermeghannb.ca/images/portfolio/whaleskull/whaleskulldisplay2.jpg',
             'https://carpentermeghannb.ca/images/portfolio/retainingwall/concretewall.png',
             'https://carpentermeghannb.ca/images/portfolio/cedar%20deck/CedarDeck.jpg',
             'https://carpentermeghannb.ca/images/portfolio/cedarfence/fence2.jpg',
             'https://carpentermeghannb.ca/images/portfolio/misc/stairs.jpg',
+            'https://carpentermeghannb.ca/images/portfolio/misc/tansicards.jpg',
+            'https://carpentermeghannb.ca/images/portfolio/misc/exteriordoortrimandsiding2.jpg',
+            'https://carpentermeghannb.ca/images/portfolio/misc/exteriordoortrimandsiding.jpg',
+            'https://carpentermeghannb.ca/images/portfolio/misc/foundation.jpg',
+
             'https://carpentermeghannb.ca/images/portfolio/misc/exteriordoortrimandsiding.jpg',
             'https://carpentermeghannb.ca/images/portfolio/bathfloor/linobathsink.jpg',
-            'https://carpentermeghannb.ca/images/portfolio/kitchen/kitchen1.jpg'
+            'https://carpentermeghannb.ca/images/portfolio/kitchen/kitchen1.jpg',
+            'https://carpentermeghannb.ca/images/mossbeard.jpg',
+             'https://carpentermeghannb.ca/images/portfolio/rot%20repair/rotqueen.jpg',
+             'https://carpentermeghannb.ca/images/portfolio/retainingwall/retainingwall.jpg',
+             'https://carpentermeghannb.ca/images/portfolio/andrewswall/sidingwindow.jpg',
+
+             'https://carpentermeghannb.ca/images/portfolio/andrewswall/sidingwindow.jpg',
+             'https://carpentermeghannb.ca/images/portfolio/andrewswall/andrewswindow.jpg',
+             'https://carpentermeghannb.ca/images/portfolio/kitchen/kitchendone.jpg',
+             'https://carpentermeghannb.ca/images/portfolio/kitchen/kitchenbackdoor.jpg',
+             'https://carpentermeghannb.ca/images/portfolio/greenigloo/Greenigloo3.jpg',
+             'https://carpentermeghannb.ca/images/portfolio/greenigloo/greeniglooinside.jpg',
+
+
+             'https://carpentermeghannb.ca/images/portfolio/misc/BelieveMagic2.png'
          
         ];
 
         // Function to select a random image
         function getRandomImage() {
+     let randomImage;
+    do {
         const randomIndex = Math.floor(Math.random() * images.length);
-        return images[randomIndex];
-        }
+        randomImage = images[randomIndex];
+    } while (randomImage === 'http://carpentermeghann.ca/assets/img/noise.svg');
+    return randomImage;
+}
 
         // Select two random images
         const randomImage1 = getRandomImage();
@@ -245,9 +271,7 @@
         while (randomImage1 === randomImage2) {
         randomImage2 = getRandomImage();
         }
-
-
-        
+       
         // Set the random images as the src of the img elements
         document.getElementById('randomImage1').src = randomImage1;
         document.getElementById('randomImage2').src = randomImage2;
