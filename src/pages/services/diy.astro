@@ -1,0 +1,52 @@
+---
+import { Picture } from 'astro:assets';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { image } from '../../lib/images';
+---
+
+<BaseLayout
+  title="DIY Guidance & Consultation — Carpenter Meghann B"
+  description="Get expert carpentry guidance for your own projects. Personalized consultations from Red Seal Carpenter Meghann Barsalou, Prince Rupert, BC."
+>
+  <section class="service-hero">
+    <Picture
+      src={image('portfolio/misc/consultation1.jpg')}
+      widths={[768, 1280, 1920]}
+      sizes="100vw"
+      alt=""
+      loading="eager"
+    />
+    <div class="service-hero-content">
+      <p class="eyebrow eyebrow-center">Carpentry Services</p>
+      <h1>DIY Guidance &amp; Consultation</h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="service-content">
+      <p class="eyebrow"><a href="/services">All services</a></p>
+      <h2>Expert Guidance for Your Project</h2>
+      <p>Not every project requires a full-service contractor. Sometimes you need a professional opinion, a bit of guidance, or help planning your own DIY project. That's where I come in — I offer personalized consultations to help you succeed with your own carpentry and renovation work.</p>
+      <p>With over 20 years of experience, I can help you avoid common pitfalls, choose the right materials, and approach your project with confidence.</p>
+
+      <h2>What I Offer</h2>
+      <ul>
+        <li>Project planning and design advice</li>
+        <li>Material selection guidance</li>
+        <li>Tool and technique recommendations</li>
+        <li>Building code and permit guidance</li>
+        <li>On-site consultations and assessments</li>
+        <li>Troubleshooting and problem-solving</li>
+        <li>Referrals to trusted tradespeople for specialized work</li>
+      </ul>
+
+      <h2>My Approach</h2>
+      <p>I believe in empowering homeowners with knowledge. When you book a consultation with me, I'll listen carefully to your ideas, assess your space, and provide honest, practical advice. I'll tell you what's realistic, what to watch out for, and how to get the best results within your budget and skill level.</p>
+      <p>As someone who values learning and sharing knowledge, I genuinely enjoy helping others develop their own skills and confidence. Whether you're a first-time DIYer or an experienced renovator looking for a second opinion, I'm here to help.</p>
+
+      <div style="margin-top: var(--space-fluid-xl); text-align: center;">
+        <a href="/contact" class="btn btn-primary btn-lg">Book a Consultation</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

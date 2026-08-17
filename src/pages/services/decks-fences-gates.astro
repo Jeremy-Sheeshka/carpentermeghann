@@ -1,0 +1,50 @@
+---
+import { Picture } from 'astro:assets';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { image } from '../../lib/images';
+---
+
+<BaseLayout
+  title="Decks, Fences, Gates & Railings — Carpenter Meghann B"
+  description="Custom outdoor structures built to last. Decks, fences, gates, and railings by Red Seal Carpenter Meghann Barsalou in Prince Rupert, BC."
+>
+  <section class="service-hero">
+    <Picture
+      src={image('portfolio/cedarfence/fences.jpg')}
+      widths={[768, 1280, 1920]}
+      sizes="100vw"
+      alt=""
+      loading="eager"
+    />
+    <div class="service-hero-content">
+      <p class="eyebrow eyebrow-center">Carpentry Services</p>
+      <h1>Decks, Fences, Gates &amp; Railings</h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="service-content">
+      <p class="eyebrow"><a href="/services">All services</a></p>
+      <h2>Custom Outdoor Structures</h2>
+      <p>Your outdoor space is an extension of your home. Whether you're looking for a new deck to entertain on, a privacy fence, a secure gate, or sturdy railings, I build structures that are as beautiful as they are durable.</p>
+      <p>Prince Rupert's coastal climate demands materials and construction methods that can handle moisture, wind, and seasonal changes. I select high-quality materials — cedar is a favourite for its natural beauty and weather resistance — and build with techniques that ensure longevity.</p>
+
+      <h2>What I Offer</h2>
+      <ul>
+        <li>Custom deck design and construction</li>
+        <li>Cedar and pressure-treated wood fencing</li>
+        <li>Driveway and garden gates</li>
+        <li>Deck and stair railings</li>
+        <li>Deck repairs and resurfacing</li>
+        <li>Pergolas and shade structures</li>
+      </ul>
+
+      <h2>My Approach</h2>
+      <p>Every outdoor project starts with understanding how you want to use the space. I consider the layout of your property, sun exposure, views, and privacy needs. I work closely with you throughout the design and build process, ensuring the final result matches your vision and stands up to the elements for years to come.</p>
+
+      <div style="margin-top: var(--space-fluid-xl); text-align: center;">
+        <a href="/contact" class="btn btn-primary btn-lg">Get a Quote</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

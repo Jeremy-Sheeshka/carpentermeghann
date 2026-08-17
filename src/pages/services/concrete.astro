@@ -1,0 +1,50 @@
+---
+import { Picture } from 'astro:assets';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { image } from '../../lib/images';
+---
+
+<BaseLayout
+  title="Concrete & Masonry — Carpenter Meghann B"
+  description="Concrete foundations, retaining walls, and masonry work. Red Seal Carpenter Meghann Barsalou serving Prince Rupert and North Coast BC."
+>
+  <section class="service-hero">
+    <Picture
+      src={image('portfolio/retainingwall/RetainingWallCrop.jpg')}
+      widths={[768, 1280, 1920]}
+      sizes="100vw"
+      alt=""
+      loading="eager"
+    />
+    <div class="service-hero-content">
+      <p class="eyebrow eyebrow-center">Carpentry Services</p>
+      <h1>Concrete &amp; Masonry</h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="service-content">
+      <p class="eyebrow"><a href="/services">All services</a></p>
+      <h2>Solid Foundations and Lasting Structures</h2>
+      <p>Concrete and masonry work requires precision, strength, and an understanding of how structures interact with the ground beneath them. From foundations to retaining walls, I bring the same attention to detail and commitment to quality that defines all my carpentry work.</p>
+
+      <h2>What I Offer</h2>
+      <ul>
+        <li>Concrete foundations and footings</li>
+        <li>Retaining walls — structural and decorative</li>
+        <li>Concrete stairs and walkways</li>
+        <li>Masonry repairs and restoration</li>
+        <li>Formwork and concrete pouring</li>
+        <li>Site preparation and grading</li>
+      </ul>
+
+      <h2>My Approach</h2>
+      <p>Every concrete project starts with proper planning and site preparation. I assess the soil conditions, drainage requirements, and structural needs before a single form is built. On the North Coast, managing water and ensuring proper drainage is critical — it's something I take very seriously in every project.</p>
+      <p>Whether it's a retaining wall that needs to hold back earth for decades or a foundation that will support your home, I build with the future in mind. Quality materials, proper reinforcement, and careful execution are non-negotiable standards in my work.</p>
+
+      <div style="margin-top: var(--space-fluid-xl); text-align: center;">
+        <a href="/contact" class="btn btn-primary btn-lg">Get a Quote</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

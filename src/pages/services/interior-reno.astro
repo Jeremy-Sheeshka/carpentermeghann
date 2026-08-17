@@ -1,0 +1,53 @@
+---
+import { Picture } from 'astro:assets';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { image } from '../../lib/images';
+---
+
+<BaseLayout
+  title="Interior Design & Remodelling — Carpenter Meghann B"
+  description="Complete interior renovations from kitchen remodels to full home transformations. Red Seal Carpenter Meghann Barsalou, Prince Rupert, BC."
+>
+  <section class="service-hero">
+    <Picture
+      src={image('portfolio/kitchen/kitchen2.jpg')}
+      widths={[768, 1280, 1920]}
+      sizes="100vw"
+      alt=""
+      loading="eager"
+    />
+    <div class="service-hero-content">
+      <p class="eyebrow eyebrow-center">Carpentry Services</p>
+      <h1>Interior Design &amp; Remodelling</h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="service-content">
+      <p class="eyebrow"><a href="/services">All services</a></p>
+      <h2>Transform Your Interior Spaces</h2>
+      <p>Your home should reflect your lifestyle and personality. Whether you're dreaming of a modern kitchen, a refreshed bathroom, or a complete interior transformation, I bring both technical skill and design sensibility to every remodelling project.</p>
+      <p>As a carpenter who personally selects materials, I let the natural qualities of wood, stone, and other materials guide the creative process. The result is a space that feels both intentional and alive.</p>
+
+      <h2>What I Offer</h2>
+      <ul>
+        <li>Kitchen remodelling and cabinet installation</li>
+        <li>Bathroom renovations</li>
+        <li>Custom built-ins and shelving</li>
+        <li>Flooring installation</li>
+        <li>Trim, moulding, and finishing work</li>
+        <li>Drywall repair and installation</li>
+        <li>Painting and finishing</li>
+        <li>Full home renovations</li>
+      </ul>
+
+      <h2>My Approach</h2>
+      <p>I believe that interior remodelling should be a collaborative process. I work closely with you to understand how you use your space, what you love about it, and what you'd like to change. From there, I develop a plan that balances aesthetics, functionality, and budget.</p>
+      <p>Throughout the project, I maintain open communication and a clean work environment. I treat your home with respect, and I'm committed to delivering results that exceed your expectations.</p>
+
+      <div style="margin-top: var(--space-fluid-xl); text-align: center;">
+        <a href="/contact" class="btn btn-primary btn-lg">Get a Quote</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

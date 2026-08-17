@@ -1,0 +1,143 @@
+---
+import { Picture } from 'astro:assets';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { image } from '../lib/images';
+---
+
+<BaseLayout
+  title="Meet Meghann — Carpenter Meghann B"
+  description="I'm the owner, the carpenter, the bookkeeper and the project manager; a Red Seal Carpenter with over 20 years of industry experience."
+>
+  <section class="service-hero">
+    <Picture
+      src={image('MeghannBG.jpg')}
+      widths={[768, 1280, 1920]}
+      sizes="100vw"
+      alt=""
+      loading="eager"
+    />
+    <div class="service-hero-content">
+      <p class="eyebrow eyebrow-center">About</p>
+      <h1>Meet Meghann</h1>
+      <p style="color: var(--fg-muted); font-size: var(--text-md); margin-top: var(--space-md);">I'm the owner, the carpenter, the bookkeeper and the project manager; a Red Seal Carpenter and a woodworker with over twenty years of industry experience. <em>My name is Meghann Barsalou and I'm pleased to meet you!</em></p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container-narrow">
+      <p class="eyebrow">The mantra</p>
+      <h2>Functional design.<br>Artisan quality.<br>Heartfelt care.</h2>
+
+      <div class="flow" style="margin-top: var(--space-lg)">
+        <p>My approach to carpentry and work ethic is steered by my inner values, which can be seen in every endeavour.</p>
+        <p>These values are what I believe transcend my work beyond <em>just</em> constructing or designing functional and aesthetic projects, but ensure that the end product which is crafted is done so with mindfulness and attention to detail.</p>
+      </div>
+
+      <div class="gallery-trio" style="margin-top: var(--space-xl)">
+        <Picture src={image('portfolio/rot-repair/rotqueen.jpg')} widths={[480, 768]} sizes="(max-width: 600px) 100vw, 33vw" alt="Meghann at work" loading="lazy" />
+        <Picture src={image('portfolio/misc/BelieveMagic2.png')} widths={[480, 768]} sizes="(max-width: 600px) 100vw, 33vw" alt="Believe in Magic" loading="lazy" />
+        <Picture src={image('portfolio/misc/Headshot2.jpg')} widths={[480, 768]} sizes="(max-width: 600px) 100vw, 33vw" alt="Meghann headshot" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-accent">
+    <div class="container-narrow">
+      <p class="eyebrow">Skills</p>
+      <h2>Professional skills?<br>You name it, I can do it.</h2>
+
+      <div class="flow" style="margin-top: var(--space-lg)">
+        <p>I'm a <a href="https://www.red-seal.ca/eng/trades/c.1rp.2nt.2r.shtml" target="_blank" rel="noopener">Red Seal Carpenter</a> with 20+ years working in various residential, commercial and large-industry environments. I offer my clients an extensive skill set, a plethora of real world experiences, and the tools to efficiently accomplish any job big or small. As a woman carpenter, I take pride in drawing upon my unique network and connections with local tradespeople and organizations in Prince Rupert and beyond, and am confident I can accomplish any job big or small.</p>
+
+        <p>Through my imagination to reality approach in residential construction, I am able to offer my experiences in both custom and contemporary design as well as historical restoration and traditional styles.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container-narrow">
+      <p class="eyebrow">Connection</p>
+      <h2>Beyond the skills,<br>my work is about care and connection.</h2>
+
+      <div class="flow" style="margin-top: var(--space-lg)">
+        <p>When I'm working for you, we're family. This is one factor that I believe sets me apart from others; it's not just the <em>professional</em> skills I can offer, but it's about the <em>way</em> in which I am able to put them into my work.</p>
+        <p>From the first draft to the final design phase to the fine-tuning, I take pride in my work.</p>
+        <p>For me, carpentry goes beyond merely <em>completing a task</em>; it's about creating something that <strong>brings happiness to the world</strong> and showcases my unwavering commitment to exceptional craftsmanship.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-accent">
+    <div class="container-narrow">
+      <p class="eyebrow">Let's work together</p>
+      <h2>Team up with a carpenter<br>who truly cares.</h2>
+
+      <div class="flow" style="margin-top: var(--space-lg)">
+        <p>As <em>Carpenter Meghann B</em>, I have been able to focus on being myself and allowing my inner values to shine through my work and into my client's experience. I believe that my holistic approach to carpentry not only transcends beyond the average contractor's "a job's a job" business model, but challenges the status quo of the construction industry by prioritizing care and connection with my clients.</p>
+        <p>Regardless of if it's new cabinetry, rot-repair, or even window trim, when you work with me your project will be treated with <strong>absolute care and attention to detail.</strong></p>
+        <p>If you believe that this resonates with your own values, <a href="/contact">please reach out to me</a> so we can discuss a future project.</p>
+        <p><strong>&mdash;</strong> Carpenter Meghann B</p>
+        <div style="margin-top: var(--space-md)">
+          <img class="signature" src={image('signature..svg').src} alt="Meghann's signature" style="max-width: 240px; height: auto;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="affiliations">
+        <a href="https://bccwitt.ca/" target="_blank" rel="noopener">
+          <img src={image('BCCWITTLOGO.svg').src} alt="BCCWITT" loading="lazy">
+        </a>
+        <a href="https://skilledtradesbc.ca/" target="_blank" rel="noopener">
+          <img src={image('skilledtradesbclogo.svg').src} alt="Skilled Trades BC" loading="lazy">
+        </a>
+        <a href="http://bcbuildingtrades.org/" target="_blank" rel="noopener">
+          <img src={image('bcbuildingtrades.svg').src} alt="BC Building Trades" loading="lazy">
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .gallery-trio {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-md);
+  }
+  .gallery-trio :global(img) {
+    width: 100%;
+    aspect-ratio: 4/5;
+    object-fit: cover;
+    border-radius: var(--radius-lg);
+  }
+
+  .affiliations {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-xl);
+  }
+  .affiliations img {
+    height: 48px;
+    width: auto;
+    opacity: 0.7;
+    transition: opacity var(--duration) var(--ease-out);
+  }
+  .affiliations a:hover img {
+    opacity: 1;
+  }
+
+  .signature {
+    opacity: 0.8;
+  }
+
+  @media (max-width: 600px) {
+    .gallery-trio {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

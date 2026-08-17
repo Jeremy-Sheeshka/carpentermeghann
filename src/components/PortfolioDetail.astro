@@ -1,0 +1,440 @@
+---
+import { Picture, getImage } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+export interface Props {
+  title: string;
+  description: string;
+  hero: ImageMetadata;
+  images: ImageMetadata[];
+  index: number;
+  total: number;
+  prev?: { href: string; label: string };
+  next?: { href: string; label: string };
+}
+
+const {
+  title,
+  description,
+  hero,
+  images,
+  index,
+  total,
+  prev,
+  next,
+} = Astro.props;
+
+const heroOg = (await getImage({ src: hero, width: 1200 })).src;
+
+const gallery = await Promise.all(
+  images.map(async (src) => ({
+    src,
+    full: (await getImage({ src, widths: [1920], format: 'webp' })).src,
+  }))
+);
+---
+
+<BaseLayout
+  title={`${title} — Carpenter Meghann B`}
+  description={description}
+  image={heroOg}
+>
+  <section class="pd-hero section">
+    <div class="container">
+      <div class="pd-hero-grid">
+        <div class="pd-hero-content">
+          <p class="eyebrow">Project {String(index).padStart(2, '0')} of {String(total).padStart(2, '0')} — Portfolio</p>
+          <h1>{title}</h1>
+          <div class="pd-intro flow">
+            <slot />
+          </div>
+          <p class="pd-meta">
+            <span>{images.length} photo{images.length === 1 ? '' : 's'}</span>
+            <span class="pd-meta-dot" aria-hidden="true"></span>
+            <span>Prince Rupert &amp; North Coast BC</span>
+          </p>
+        </div>
+        <div class="pd-hero-image">
+          <Picture
+            src={hero}
+            widths={[640, 960, 1280]}
+            sizes="(max-width: 900px) 100vw, 46vw"
+            alt={title}
+            loading="eager"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-sm">
+    <div class="container">
+      <div class="pd-gallery">
+        {gallery.map((item, i) => (
+          <button
+            type="button"
+            class:list={['pd-gallery-item', { 'pd-gallery-feature': i === 0 }]}
+            data-full={item.full}
+            data-index={i}
+            aria-label={`Open photo ${i + 1} of ${images.length} in fullscreen`}
+          >
+            <Picture
+              src={item.src}
+              widths={[480, 768, 1024]}
+              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+              alt=""
+              loading="lazy"
+            />
+          </button>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {(prev || next) && (
+    <section class="section-sm">
+      <div class="container">
+        <nav class="pd-nav" aria-label="More projects">
+          {prev ? (
+            <a href={prev.href} class="pd-nav-link pd-nav-prev">
+              <span class="pd-nav-arrow" aria-hidden="true">&larr;</span>
+              <span class="pd-nav-text">
+                <span class="pd-nav-kicker">Previous project</span>
+                <span class="pd-nav-label">{prev.label}</span>
+              </span>
+            </a>
+          ) : (
+            <span class="pd-nav-spacer" aria-hidden="true"></span>
+          )}
+          {next ? (
+            <a href={next.href} class="pd-nav-link pd-nav-next">
+              <span class="pd-nav-text">
+                <span class="pd-nav-kicker">Next project</span>
+                <span class="pd-nav-label">{next.label}</span>
+              </span>
+              <span class="pd-nav-arrow" aria-hidden="true">&rarr;</span>
+            </a>
+          ) : (
+            <span class="pd-nav-spacer" aria-hidden="true"></span>
+          )}
+        </nav>
+      </div>
+    </section>
+  )}
+
+  <section class="section section-accent">
+    <div class="container-narrow text-center">
+      <p class="eyebrow eyebrow-center">Your turn</p>
+      <h2>Have a project in mind?</h2>
+      <p class="text-muted" style="margin-top: var(--space-md); margin-bottom: var(--space-xl);">I'd love to hear about it. Let's discuss your vision and bring it to life.</p>
+      <a href="/contact" class="btn btn-primary btn-lg">Get in Touch</a>
+    </div>
+  </section>
+
+  <dialog id="pdLightbox" class="pd-lightbox" aria-label="Photo viewer">
+    <div class="pd-lightbox-bar">
+      <span class="pd-lightbox-count" id="pdLightboxCount"></span>
+      <button type="button" class="pd-lightbox-close" id="pdLightboxClose" aria-label="Close photo viewer">&times;</button>
+    </div>
+    <img id="pdLightboxImg" alt="">
+    <div class="pd-lightbox-nav">
+      <button type="button" id="pdLightboxPrev" aria-label="Previous photo">&larr;</button>
+      <button type="button" id="pdLightboxNext" aria-label="Next photo">&rarr;</button>
+    </div>
+  </dialog>
+</BaseLayout>
+
+<script>
+  const dialog = document.getElementById('pdLightbox') as HTMLDialogElement | null;
+  const img = document.getElementById('pdLightboxImg') as HTMLImageElement | null;
+  const count = document.getElementById('pdLightboxCount') as HTMLElement | null;
+
+  if (dialog && img && count) {
+    const items = Array.from(document.querySelectorAll<HTMLButtonElement>('.pd-gallery-item'));
+    const total = items.length;
+    let current = 0;
+
+    const show = (i: number) => {
+      current = (i + total) % total;
+      const btn = items[current];
+      img.src = btn.dataset.full ?? '';
+      img.alt = `Photo ${current + 1} of ${total}`;
+      count.textContent = `${current + 1} / ${total}`;
+    };
+
+    items.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        show(Number(btn.dataset.index ?? 0));
+        dialog.showModal();
+      });
+    });
+
+    document.getElementById('pdLightboxClose')?.addEventListener('click', () => dialog.close());
+    document.getElementById('pdLightboxPrev')?.addEventListener('click', () => show(current - 1));
+    document.getElementById('pdLightboxNext')?.addEventListener('click', () => show(current + 1));
+
+    dialog.addEventListener('click', (e) => {
+      if (e.target === dialog) dialog.close();
+    });
+
+    dialog.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') show(current - 1);
+      if (e.key === 'ArrowRight') show(current + 1);
+    });
+  }
+</script>
+
+<style>
+  .pd-hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+    gap: var(--space-fluid-xl);
+    align-items: center;
+  }
+
+  .pd-hero-content h1 {
+    font-size: var(--text-3xl);
+    font-variation-settings: 'opsz' 144;
+    margin-bottom: var(--space-lg);
+  }
+
+  .pd-intro {
+    color: var(--fg-dim);
+    font-size: var(--text-md);
+    line-height: 1.7;
+  }
+
+  .pd-intro :global(a) {
+    color: var(--teal-400);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: color var(--duration) var(--ease-out);
+  }
+
+  .pd-intro :global(a:hover) {
+    color: var(--accent);
+  }
+
+  .pd-intro :global(em) {
+    color: var(--fg-muted);
+  }
+
+  .pd-meta {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    margin-top: var(--space-xl);
+    margin-bottom: 0;
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--teal-500);
+  }
+
+  .pd-meta-dot {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--teal-600);
+  }
+
+  .pd-hero-image {
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+
+  .pd-hero-image :global(img) {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+  }
+
+  .pd-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-flow: dense;
+    gap: var(--space-md);
+  }
+
+  .pd-gallery-item {
+    position: relative;
+    display: block;
+    width: 100%;
+    aspect-ratio: 4/3;
+    padding: 0;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    background: var(--bg-surface);
+    cursor: zoom-in;
+    transition: border-color var(--duration) var(--ease-out), transform var(--duration) var(--ease-out);
+  }
+
+  .pd-gallery-item:hover {
+    border-color: var(--border-light);
+    transform: translateY(-2px);
+  }
+
+  .pd-gallery-item :global(img) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .pd-gallery-feature {
+    grid-column: span 2;
+    grid-row: span 2;
+    aspect-ratio: auto;
+  }
+
+  .pd-nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-md);
+  }
+
+  .pd-nav-link {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-lg) var(--space-xl);
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    transition: border-color var(--duration) var(--ease-out), background var(--duration) var(--ease-out);
+  }
+
+  .pd-nav-link:hover {
+    border-color: var(--border-light);
+    background: var(--bg-elevated);
+  }
+
+  .pd-nav-next {
+    justify-content: flex-end;
+    text-align: right;
+  }
+
+  .pd-nav-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .pd-nav-kicker {
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--teal-500);
+  }
+
+  .pd-nav-label {
+    font-family: var(--font-display);
+    font-size: var(--text-md);
+    color: var(--fg);
+  }
+
+  .pd-nav-arrow {
+    font-size: 1.4em;
+    color: var(--accent);
+  }
+
+  .pd-nav-spacer {
+    display: none;
+  }
+
+  .pd-lightbox {
+    border: none;
+    padding: 0;
+    background: rgba(8, 21, 39, 0.96);
+    color: var(--cream);
+    width: 100vw;
+    height: 100vh;
+    max-width: none;
+    max-height: none;
+  }
+
+  .pd-lightbox::backdrop {
+    background: rgba(8, 21, 39, 0.9);
+  }
+
+  .pd-lightbox img {
+    width: 100%;
+    height: calc(100vh - 7rem);
+    object-fit: contain;
+  }
+
+  .pd-lightbox-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-md) var(--space-lg);
+    height: 3.5rem;
+    font-size: var(--text-sm);
+    color: var(--fg-muted);
+  }
+
+  .pd-lightbox-close {
+    background: none;
+    border: none;
+    color: var(--cream);
+    font-size: 2rem;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0.25rem 0.75rem;
+  }
+
+  .pd-lightbox-nav {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--space-md) var(--space-lg);
+    height: 3.5rem;
+  }
+
+  .pd-lightbox-nav button {
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    color: var(--cream);
+    border-radius: var(--radius-md);
+    padding: 0.5rem 1.25rem;
+    font-size: 1.25rem;
+    cursor: pointer;
+    transition: border-color var(--duration) var(--ease-out);
+  }
+
+  .pd-lightbox-nav button:hover {
+    border-color: var(--border-light);
+  }
+
+  @media (max-width: 900px) {
+    .pd-hero-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .pd-hero-image {
+      order: -1;
+    }
+
+    .pd-gallery {
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-sm);
+    }
+
+    .pd-nav {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 560px) {
+    .pd-gallery {
+      grid-template-columns: 1fr;
+    }
+
+    .pd-gallery-feature {
+      grid-column: span 1;
+      grid-row: span 1;
+      aspect-ratio: 4/3;
+    }
+  }
+</style>

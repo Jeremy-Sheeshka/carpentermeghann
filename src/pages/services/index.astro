@@ -1,0 +1,159 @@
+---
+import { Picture } from 'astro:assets';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { image } from '../../lib/images';
+
+const services = [
+  {
+    href: '/services/windows-doors',
+    img: 'portfolio/misc/exteriordoortrimandsiding.jpg',
+    title: 'Windows & Doors',
+    description: 'Expert installation and replacement of windows and doors, ensuring energy efficiency and aesthetic appeal.',
+  },
+  {
+    href: '/services/decks-fences-gates',
+    img: 'portfolio/cedarfence/fences.jpg',
+    title: 'Decks, Fences, Gates & Railings',
+    description: 'Custom outdoor structures built to withstand the North Coast climate while enhancing your outdoor living space.',
+  },
+  {
+    href: '/services/siding-stairs',
+    img: 'portfolio/misc/stairs.jpg',
+    title: 'Exterior Siding, Stairs & Structures',
+    description: 'Durable exterior siding, sturdy staircases, and custom outdoor structures designed for longevity.',
+  },
+  {
+    href: '/services/interior-reno',
+    img: 'portfolio/kitchen/kitchen2.jpg',
+    title: 'Interior Design & Remodelling',
+    description: 'Comprehensive interior renovations from kitchen remodels to full home transformations.',
+  },
+  {
+    href: '/services/concrete',
+    img: 'portfolio/retainingwall/RetainingWallCrop.jpg',
+    title: 'Concrete & Masonry',
+    description: 'Concrete foundations, retaining walls, masonry work, and structural concrete projects.',
+  },
+  {
+    href: '/services/diy',
+    img: 'portfolio/misc/consultation1.jpg',
+    title: 'DIY Guidance & Consultation',
+    description: 'Personalized guidance for your own projects, from planning to execution tips and tricks.',
+  },
+];
+---
+
+<BaseLayout
+  title="Carpentry Services — Carpenter Meghann B"
+  description="Combining traditional craftsmanship with modern techniques. Browse our full range of carpentry services in Prince Rupert, BC."
+>
+  <section class="page-header">
+    <div class="container">
+      <p class="eyebrow eyebrow-center">Carpentry Services</p>
+      <h1>What I build</h1>
+      <p>Combining traditional craftsmanship with modern techniques, Carpenter Meghann B's projects endure the test of time. <em>Let's build something extraordinary together.</em></p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="svc-index-grid">
+        {services.map((svc, i) => (
+          <a href={svc.href} class="svc-index-card">
+            <Picture
+              src={image(svc.img)}
+              widths={[480, 768, 1024]}
+              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+              alt={svc.title}
+              loading="lazy"
+            />
+            <div class="svc-index-body">
+              <span class="numeral">{String(i + 1).padStart(2, '0')}</span>
+              <h2>{svc.title}</h2>
+              <p>{svc.description}</p>
+              <span class="svc-index-link">View details &rarr;</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-accent">
+    <div class="container-narrow text-center">
+      <p class="eyebrow eyebrow-center">Let's talk</p>
+      <h2>Ready to start your project?</h2>
+      <p class="text-muted" style="margin-top: var(--space-md); margin-bottom: var(--space-xl);">Get in touch for a free consultation and quote. I'll work with you to bring your vision to life.</p>
+      <a href="/contact" class="btn btn-primary btn-lg">Book a Quote</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .svc-index-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-fluid-md);
+  }
+
+  .svc-index-card {
+    display: flex;
+    flex-direction: column;
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    transition: border-color var(--duration) var(--ease-out), transform var(--duration) var(--ease-out);
+  }
+
+  .svc-index-card:hover {
+    border-color: var(--border-light);
+    transform: translateY(-3px);
+  }
+
+  .svc-index-card :global(img) {
+    width: 100%;
+    aspect-ratio: 16/10;
+    object-fit: cover;
+  }
+
+  .svc-index-body {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    padding: var(--space-lg);
+    flex: 1;
+  }
+
+  .svc-index-body h2 {
+    font-size: var(--text-lg);
+    margin: 0;
+  }
+
+  .svc-index-body p {
+    color: var(--fg-dim);
+    font-size: var(--text-sm);
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  .svc-index-link {
+    margin-top: auto;
+    padding-top: var(--space-md);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--accent);
+  }
+
+  @media (max-width: 1024px) {
+    .svc-index-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .svc-index-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

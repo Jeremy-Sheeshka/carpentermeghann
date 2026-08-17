@@ -1,0 +1,50 @@
+---
+import { Picture } from 'astro:assets';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { image } from '../../lib/images';
+---
+
+<BaseLayout
+  title="Exterior Siding, Stairs & Structures — Carpenter Meghann B"
+  description="Exterior siding, custom stairs, and outdoor structures built for the North Coast climate. Red Seal Carpenter in Prince Rupert, BC."
+>
+  <section class="service-hero">
+    <Picture
+      src={image('portfolio/misc/stairs.jpg')}
+      widths={[768, 1280, 1920]}
+      sizes="100vw"
+      alt=""
+      loading="eager"
+    />
+    <div class="service-hero-content">
+      <p class="eyebrow eyebrow-center">Carpentry Services</p>
+      <h1>Exterior Siding, Stairs &amp; Structures</h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="service-content">
+      <p class="eyebrow"><a href="/services">All services</a></p>
+      <h2>Protecting and Enhancing Your Home's Exterior</h2>
+      <p>The exterior of your home is the first thing people see, and it's also your first line of defense against the elements. From siding that protects and beautifies, to stairs that provide safe access, to custom structures that add character — I bring craftsmanship and care to every exterior project.</p>
+
+      <h2>What I Offer</h2>
+      <ul>
+        <li>Exterior siding installation and replacement</li>
+        <li>Custom staircases and stair repairs</li>
+        <li>Outdoor structures and sheds</li>
+        <li>Trim and fascia work</li>
+        <li>Weatherproofing and moisture protection</li>
+        <li>Structural assessments and repairs</li>
+      </ul>
+
+      <h2>My Approach</h2>
+      <p>Exterior work requires special attention to weatherproofing and durability. I use materials and techniques suited to our coastal environment, ensuring proper drainage, ventilation, and sealing. Every project is approached with the goal of creating something that not only looks great but will hold up for decades.</p>
+      <p>From the initial assessment to the final coat of paint, I treat every exterior project with the same dedication to quality and longevity that defines all my work.</p>
+
+      <div style="margin-top: var(--space-fluid-xl); text-align: center;">
+        <a href="/contact" class="btn btn-primary btn-lg">Get a Quote</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

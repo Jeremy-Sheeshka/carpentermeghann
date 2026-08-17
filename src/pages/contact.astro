@@ -1,0 +1,171 @@
+---
+import { Picture } from 'astro:assets';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { image } from '../lib/images';
+---
+
+<BaseLayout
+  title="Get in Touch — Carpenter Meghann B"
+  description="Contact Carpenter Meghann B for a quote on your carpentry project. Serving Prince Rupert and North Coast BC."
+>
+  <section class="service-hero">
+    <Picture
+      src={image('portfolio/misc/consultation1.jpg')}
+      widths={[768, 1280, 1920]}
+      sizes="100vw"
+      alt=""
+      loading="eager"
+    />
+    <div class="service-hero-content">
+      <p class="eyebrow eyebrow-center">Contact</p>
+      <h1>Get in Touch</h1>
+      <p style="color: var(--fg-muted); font-size: var(--text-md); margin-top: var(--space-md);">Carpenter Meghann proudly serves residents of the North Coast and surrounding communities.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-form-col">
+          <div class="contact-info">
+            <ul class="contact-info-list">
+              <li>
+                <svg class="contact-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                <a href="mailto:meghann@carpentermeghannb.ca">meghann@carpentermeghannb.ca</a>
+              </li>
+            </ul>
+          </div>
+
+          <h2>Send me a message</h2>
+
+          <form name="contact" method="POST" data-netlify="true" class="contact-form" id="contactForm">
+            <input type="hidden" name="form-name" value="contact">
+
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input id="name" name="name" placeholder="Full name" type="text" required>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input id="email" name="email" placeholder="you@example.com" type="email" required>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="What are you looking for?" rows="6" required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg">Send Message</button>
+          </form>
+        </div>
+
+        <div class="contact-map-col">
+          <div class="contact-map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d74564.52912993098!2d-130.38601260275294!3d54.266073667422255!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xabc36f2532bbd147%3A0xe4f5ce2cf67475e3!2sCarpenter%20Meghann%20B!5e0!3m2!1sen!2sca!4v1734296614266!5m2!1sen!2sca" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-fluid-xl);
+    align-items: start;
+  }
+
+  .contact-info {
+    margin-bottom: var(--space-xl);
+  }
+
+  .contact-info-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .contact-info-list li {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-md);
+    font-size: var(--text-sm);
+    color: var(--fg-muted);
+  }
+
+  .contact-icon {
+    flex-shrink: 0;
+    opacity: 0.5;
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  .form-group label {
+    font-size: var(--text-sm);
+    font-weight: 500;
+    color: var(--fg-muted);
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    background: var(--bg-surface);
+    color: var(--fg);
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    transition: border-color var(--duration) var(--ease-out);
+  }
+
+  .form-group input:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+  }
+
+  .form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+
+  .contact-map {
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    border: 1px solid var(--border);
+    height: 100%;
+    min-height: 400px;
+  }
+
+  .contact-map iframe {
+    width: 100%;
+    height: 100%;
+    min-height: 400px;
+  }
+
+  @media (max-width: 768px) {
+    .contact-grid {
+      grid-template-columns: 1fr;
+    }
+    .contact-map {
+      min-height: 300px;
+    }
+    .contact-map iframe {
+      min-height: 300px;
+    }
+  }
+</style>

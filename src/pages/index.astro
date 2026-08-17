@@ -1,0 +1,283 @@
+---
+import { Picture } from 'astro:assets';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { image } from '../lib/images';
+import { phrases } from '../data/phrases';
+
+const heroImages = [
+  'portfolio/cedarfence/fence2.jpg',
+  'portfolio/kitchen/kitchen1.jpg',
+  'portfolio/cedarfence/fences.jpg',
+  'portfolio/cedarfence/cedarfencebuild.jpg',
+  'portfolio/whaleskull/whaleskulldisplay2.jpg',
+  'portfolio/retainingwall/concretewall.png',
+  'portfolio/cedar-deck/CedarDeck.jpg',
+  'portfolio/misc/stairs.jpg',
+  'portfolio/misc/exteriordoortrimandsiding2.jpg',
+  'portfolio/misc/foundation.jpg',
+  'portfolio/bathfloor/linobathsink.jpg',
+  'portfolio/rot-repair/rotqueen.jpg',
+  'portfolio/andrewswall/sidingwindow.jpg',
+  'portfolio/kitchen/kitchendone.jpg',
+  'portfolio/kitchen/kitchenbackdoor.jpg',
+  'portfolio/greenigloo/GreenIgloo3.jpg',
+];
+
+const mainImg = heroImages[Math.floor(Math.random() * heroImages.length)];
+const tagline = 'From imagination to reality;';
+
+const phrase = phrases[Math.floor(Math.random() * phrases.length)];
+
+const values = [
+  { icon: 'spooder.svg', title: 'Courage', text: 'Courage is one of my main values for many reasons; courage to move forward in my chosen profession as an industry leader, courage to construct that which does not yet exist, and courage to be myself.' },
+  { icon: 'wrench.svg', title: 'Craft', text: 'I aspire to avoid the quick-fix methods in my craft that are often prevalent in modern contracting. While I can work within a range of different budgets, I never cut corners or compromise on quality. I take pride in my craft and believe that through selecting high-quality materials, each piece of wood tells a different story.' },
+  { icon: 'connected.svg', title: 'Connection', text: 'Developing a solid client relationship is a cornerstone of my carpentry approach. I emphasize open communication, actively listen, and thoughtfully consider my clients\' needs. My goal is to grasp their vision and ensure they are completely satisfied with the final result.' },
+  { icon: 'dino.svg', title: 'Longevity', text: 'Having longevity as one of my forefront core values goes beyond simply completing a task but I believe encompasses my deep sense of responsibility, effort and attention to detail I bring to each project to ensure structurally sound and long lasting work.' },
+  { icon: 'leadership.svg', title: 'Leadership', text: 'I strive to view each project with a clear vision and purpose, considering the functionality, aesthetics, and client\'s preferences while designing. Leadership plays a huge role in my projects through setting goals, taking initiative, and bringing people together.' },
+  { icon: 'learning.svg', title: 'Learning', text: 'By having Learning as one of my core values, I am able to continuously grow and cultivate my skills in a personal and professional way that furthers my abilities as a carpenter no matter the task at hand. I value sharing this knowledge with others around me.' },
+];
+
+const services = [
+  { href: '/services/windows-doors', img: 'portfolio/misc/exteriordoortrimandsiding.jpg', title: 'Windows & Doors' },
+  { href: '/services/decks-fences-gates', img: 'portfolio/cedarfence/fences.jpg', title: 'Decks, Fences, Gates & Railings' },
+  { href: '/services/siding-stairs', img: 'portfolio/misc/stairs.jpg', title: 'Exterior Siding, Stairs & Structures' },
+  { href: '/services/interior-reno', img: 'portfolio/kitchen/kitchen2.jpg', title: 'Interior Design & Remodelling' },
+  { href: '/services/concrete', img: 'portfolio/retainingwall/RetainingWallCrop.jpg', title: 'Concrete & Masonry' },
+  { href: '/services/diy', img: 'portfolio/misc/consultation1.jpg', title: 'DIY Guidance & Consultation' },
+];
+---
+
+<BaseLayout
+  title="Carpenter Meghann B — Imagination to Reality"
+  description="Imagination to Reality carpentry for homeowners who value thoughtful craftsmanship. Based in Prince Rupert, BC."
+>
+  <section class="hero">
+    <div class="hero-bg">
+      <Picture
+        src={image(mainImg)}
+        widths={[768, 1280, 1920]}
+        sizes="100vw"
+        alt=""
+        loading="eager"
+      />
+    </div>
+    <div class="hero-content">
+      <p class="eyebrow eyebrow-center">Red Seal Carpenter · Prince Rupert, BC</p>
+      <h1>Functional Design.<br>Artisan Quality.<br><span class="highlight">Heartfelt Care.</span></h1>
+      <p class="hero-subtitle">
+        <span class="rainbow-text" aria-label={tagline}>
+          {tagline.split('').map((ch, i) => (
+            ch === ' '
+              ? <span class="rb-char rb-space" style={`animation-delay: ${i * 0.15}s`} aria-hidden="true"> </span>
+              : <span class="rb-char" style={`animation-delay: ${i * 0.15}s`}>{ch}</span>
+          ))}
+        </span>{' '}
+        helping homeowners create beautiful spaces.
+      </p>
+      <div class="hero-cta">
+        <a href="/contact" class="btn btn-primary btn-lg">Book a Quote</a>
+        <a href="/services" class="btn btn-outline btn-lg">Explore Services</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="about-grid">
+        <div>
+          <p class="eyebrow">Hello</p>
+          <h2>I'm Meghann Barsalou, a Red Seal Carpenter based out of Prince Rupert, BC.</h2>
+          <div class="flow">
+            <p>My approach is anchored in two fundamental principles: dedication and authenticity. I weave these principles into <em>every</em> endeavor.</p>
+            <p>I also prioritize transparent communication and exceptional client relations, coupled with a keen ability to observe and comprehend the environment I operate in.</p>
+            <p>Whenever possible, I personally choose materials, allowing their natural qualities to steer the creative journey. This harmonious interaction between the journeyperson and the material breathes life into extraordinary projects.</p>
+          </div>
+          <div class="intro-links">
+            <a href="#values" class="intro-link">
+              <img src={image('mountain.svg').src} width="48" height="48" alt="" />
+              <span>My guiding values will tell you more on my approach.</span>
+            </a>
+            <a href="/meet-meghann" class="intro-link">
+              <img src={image('book.svg').src} width="48" height="48" alt="" />
+              <span>Read my bio to get a better sense of who I am.</span>
+            </a>
+            <a href="/services" class="intro-link">
+              <img src={image('drill.png').src} width="48" height="48" alt="" />
+              <span>Or see what I offer with my carpentry services.</span>
+            </a>
+          </div>
+        </div>
+        <Picture
+          src={image('headshot.jpg')}
+          widths={[480, 768, 1024]}
+          sizes="(max-width: 768px) 100vw, 46vw"
+          alt="Meghann Barsalou"
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-accent">
+    <div class="container">
+      <header class="section-head section-head-center">
+        <p class="eyebrow eyebrow-center">Carpentry Services</p>
+        <h2>What I can build for you</h2>
+        <p class="lede">From a single door to a full renovation — here are the ways I can help transform your space.</p>
+      </header>
+      <div class="svc-grid">
+        {services.map(svc => (
+          <a href={svc.href} class="svc-card">
+            <Picture
+              src={image(svc.img)}
+              widths={[480, 768]}
+              sizes="(max-width: 768px) 100vw, 33vw"
+              alt={svc.title}
+              loading="lazy"
+            />
+            <h3>{svc.title}</h3>
+            <span class="svc-link">View details &rarr;</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="values">
+    <div class="container">
+      <header class="section-head section-head-center">
+        <p class="eyebrow eyebrow-center">Guiding values</p>
+        <h2>The principles behind every build</h2>
+        <p class="lede">If you can dream it, I can build it. Definitely. But what I believe distinguishes me from others in this industry is <em>how</em> I approach each project through my core values.</p>
+      </header>
+      <div class="values-grid">
+        {values.map(v => (
+          <div class="value-card">
+            <img class="value-icon" src={image(v.icon).src} alt="" width="48" height="48" />
+            <h3>{v.title}</h3>
+            <p>{v.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-accent">
+    <div class="container-narrow text-center">
+      <blockquote class="quote-block">
+        <p class="quote-text" set:html={phrase} />
+        <div class="quote-footer">
+          <img class="quote-avatar" src={image('iconheadshot.jpg').src} alt="Meghann" width="60" height="60" />
+          <div>
+            <a href="/contact" class="btn btn-primary btn-lg">Book a Quote</a>
+          </div>
+        </div>
+      </blockquote>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .intro-links {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    margin-top: var(--space-xl);
+  }
+
+  .intro-link {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    color: var(--fg-muted);
+    font-size: var(--text-sm);
+    transition: color var(--duration) var(--ease-out);
+  }
+
+  .intro-link:hover {
+    color: var(--fg);
+  }
+
+  .intro-link img {
+    flex-shrink: 0;
+    width: 3rem;
+    height: 3rem;
+    opacity: 0.7;
+  }
+
+  .svc-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-fluid-md);
+  }
+
+  .svc-card {
+    display: flex;
+    flex-direction: column;
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    padding: var(--space-lg);
+    transition: border-color var(--duration) var(--ease-out), transform var(--duration) var(--ease-out);
+  }
+
+  .svc-card:hover {
+    border-color: var(--border-light);
+    transform: translateY(-3px);
+  }
+
+  .svc-card :global(img) {
+    width: 100%;
+    aspect-ratio: 16/10;
+    object-fit: cover;
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--space-md);
+  }
+
+  .svc-card h3 {
+    font-size: var(--text-lg);
+    margin-bottom: var(--space-xs);
+  }
+
+  .svc-link {
+    margin-top: auto;
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--accent);
+  }
+
+  .quote-text {
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
+    font-style: italic;
+    line-height: 1.5;
+    margin-bottom: var(--space-lg);
+  }
+
+  .quote-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-md);
+  }
+
+  .quote-avatar {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--border);
+  }
+
+  @media (max-width: 900px) {
+    .svc-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .svc-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

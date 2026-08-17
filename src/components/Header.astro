@@ -1,0 +1,277 @@
+---
+import { Image } from 'astro:assets';
+import { image } from '../lib/images';
+
+const currentPath = Astro.url.pathname;
+
+const navItems = [
+  { href: '/services', label: 'Carpentry Services', children: [
+    { href: '/services/windows-doors', label: 'Windows & Doors' },
+    { href: '/services/decks-fences-gates', label: 'Decks, Fences, Gates & Railings' },
+    { href: '/services/siding-stairs', label: 'Exterior Siding, Stairs & Structures' },
+    { href: '/services/interior-reno', label: 'Interior Design & Remodelling' },
+    { href: '/services/concrete', label: 'Concrete & Masonry' },
+    { href: '/services/diy', label: 'DIY Guidance & Consultation' },
+  ]},
+  { href: '/meet-meghann', label: 'About Meghann' },
+  { href: '/portfolio', label: 'Portfolio' },
+  { href: '/contact', label: 'Get in Touch' },
+];
+
+function isActive(path: string) {
+  if (path === '/' && currentPath === '/') return true;
+  if (path !== '/' && currentPath.startsWith(path)) return true;
+  return false;
+}
+---
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-logo">
+      <a href="/" aria-label="Carpenter Meghann B — home">
+        <Image src={image('CarpenterMeghannLogoTree2svg.svg')} alt="Carpenter Meghann B" height={40} />
+      </a>
+    </div>
+
+    <div class="header-right">
+      <nav class="header-nav" id="mainNav" aria-label="Main navigation">
+        {navItems.map(item => (
+          <div class="nav-item">
+            {item.children ? (
+              <>
+                <a href={item.href} class:list={['nav-link', { active: isActive(item.href) }]}>
+                  {item.label}
+                  <svg class="nav-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+                </a>
+                <div class="nav-dropdown">
+                  {item.children.map(child => (
+                    <a href={child.href} class:list={['dropdown-link', { active: isActive(child.href) }]}>
+                      {child.label}
+                    </a>
+                  ))}
+                </div>
+              </>
+            ) : (
+              <a href={item.href} class:list={['nav-link', { active: isActive(item.href) }]}>
+                {item.label}
+              </a>
+            )}
+          </div>
+        ))}
+        <a href="/contact" class="btn btn-primary nav-cta">Book a Quote</a>
+        <p class="nav-drawer-foot">Red Seal Carpenter · Prince Rupert, BC</p>
+      </nav>
+
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark theme">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"></circle>
+          <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path>
+        </svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+      </button>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mainNav">
+        <svg viewBox="0 0 60 40" width="30" height="20" aria-hidden="true">
+          <rect y="0" width="60" height="2" rx="1" fill="currentColor"></rect>
+          <rect y="16" width="60" height="2" rx="1" fill="currentColor"></rect>
+        </svg>
+      </button>
+    </div>
+    <div class="nav-backdrop" id="navBackdrop" aria-hidden="true"></div>
+  </div>
+</header>
+
+<script>
+  const toggle = document.getElementById('menuToggle');
+  const nav = document.getElementById('mainNav');
+  const backdrop = document.getElementById('navBackdrop');
+
+  function setMenu(open) {
+    if (!nav) return;
+    nav.classList.toggle('open', open);
+    if (toggle) toggle.setAttribute('aria-expanded', String(open));
+    if (backdrop) backdrop.classList.toggle('show', open);
+    document.body.classList.toggle('nav-locked', open);
+  }
+
+  if (toggle && nav) {
+    toggle.addEventListener('click', () => {
+      setMenu(!nav.classList.contains('open'));
+    });
+  }
+
+  if (backdrop) {
+    backdrop.addEventListener('click', () => setMenu(false));
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') setMenu(false);
+  });
+
+  if (nav) {
+    nav.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => setMenu(false)));
+  }
+
+  const themeToggle = document.getElementById('themeToggle');
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      const root = document.documentElement;
+      const next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+      root.setAttribute('data-theme', next);
+      try {
+        localStorage.setItem('theme', next);
+      } catch (e) {}
+    });
+  }
+</script>
+
+<style>
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: var(--space-fluid-md);
+  }
+
+  .nav-item {
+    position: relative;
+  }
+
+  .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    white-space: nowrap;
+  }
+
+  .nav-chevron {
+    opacity: 0.5;
+    transition: transform var(--duration) var(--ease-out);
+  }
+
+  .nav-item:hover .nav-chevron {
+    transform: rotate(180deg);
+  }
+
+  .nav-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(8px);
+    background: #ffffff;
+    border: 1px solid rgba(29, 53, 87, 0.1);
+    border-radius: var(--radius-lg);
+    padding: 0.5rem;
+    min-width: 280px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--duration) var(--ease-out);
+    box-shadow: 0 16px 40px rgba(13, 31, 51, 0.28);
+    z-index: 200;
+  }
+
+  .nav-item:hover .nav-dropdown,
+  .nav-item:focus-within .nav-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(4px);
+  }
+
+  .dropdown-link {
+    display: block;
+    padding: 0.625rem 1rem;
+    font-size: var(--text-sm);
+    color: var(--navy-800);
+    border-radius: var(--radius-sm);
+    transition: all var(--duration) var(--ease-out);
+  }
+
+  .dropdown-link:hover {
+    background: rgba(230, 57, 70, 0.1);
+    color: var(--navy-800);
+  }
+
+  .dropdown-link.active {
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  .nav-cta {
+    margin-left: var(--space-md);
+    padding: 0.625rem 1.375rem;
+  }
+
+  .nav-drawer-foot {
+    display: none;
+  }
+
+  @media (max-width: 1080px) {
+    .header-right {
+      gap: var(--space-sm);
+    }
+
+    .nav-drawer-foot {
+      display: block;
+      margin-top: var(--space-xl);
+      padding: var(--space-md) 0 var(--space-lg);
+      text-align: center;
+      font-size: var(--text-xs);
+      letter-spacing: 0.06em;
+      color: var(--header-fg-muted);
+      border-bottom: none;
+    }
+
+    .nav-item {
+      position: static;
+    }
+
+    .nav-dropdown {
+      position: static;
+      transform: none;
+      opacity: 1;
+      visibility: visible;
+      background: transparent;
+      border: none;
+      box-shadow: none;
+      padding: 0 0 0.5rem 1rem;
+      min-width: 0;
+    }
+
+    .nav-item:hover .nav-dropdown {
+      transform: none;
+    }
+
+    .dropdown-link {
+      padding: 0.5rem 0.75rem;
+      font-size: var(--text-sm);
+      color: var(--header-fg-muted);
+      border-bottom: none;
+    }
+
+    .dropdown-link:hover {
+      background: transparent;
+      color: var(--header-fg);
+    }
+
+    .dropdown-link.active {
+      color: var(--accent);
+    }
+
+    .nav-chevron {
+      display: none;
+    }
+
+    .nav-cta {
+      display: flex;
+      margin: var(--space-lg) 0 0;
+      justify-content: center;
+    }
+  }
+
+  @media (min-width: 1081px) {
+    .nav-cta::after {
+      display: none;
+    }
+  }
+</style>

@@ -1,0 +1,45 @@
+---
+import { Image } from 'astro:assets';
+import { image } from '../lib/images';
+import { phrases } from '../data/phrases';
+
+const phrase = phrases[Math.floor(Math.random() * phrases.length)];
+---
+
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="/">
+        <Image class="footer-logo" src={image('CarpenterMeghannLogoTree2larger.svg')} alt="Carpenter Meghann B" height={44} />
+      </a>
+      <p><em>Distinguished Carpentry Services for Prince Rupert and North Coast BC homes</em></p>
+      <p class="footer-phrase" set:html={phrase} />
+    </div>
+
+    <nav class="footer-nav" aria-label="Services">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="/services/windows-doors">Windows &amp; Doors</a></li>
+        <li><a href="/services/decks-fences-gates">Decks, Fences, Gates &amp; Railings</a></li>
+        <li><a href="/services/siding-stairs">Exterior Siding &amp; Stairs</a></li>
+        <li><a href="/services/interior-reno">Interior Design &amp; Remodelling</a></li>
+        <li><a href="/services/concrete">Concrete &amp; Masonry</a></li>
+        <li><a href="/services/diy">DIY Guidance &amp; Consultation</a></li>
+      </ul>
+    </nav>
+
+    <nav class="footer-nav" aria-label="Explore">
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="/meet-meghann">Meet Meghann</a></li>
+        <li><a href="/portfolio">Portfolio</a></li>
+        <li><a href="/contact">Get in Touch</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="footer-bottom">
+    <span>&copy; {new Date().getFullYear()} Carpenter Meghann B</span>
+    <span>Prince Rupert, BC</span>
+  </div>
+</footer>

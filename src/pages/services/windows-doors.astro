@@ -1,0 +1,50 @@
+---
+import { Picture } from 'astro:assets';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { image } from '../../lib/images';
+---
+
+<BaseLayout
+  title="Windows & Doors — Carpenter Meghann B"
+  description="Expert installation and replacement of windows and doors in Prince Rupert, BC. Energy-efficient solutions by Red Seal Carpenter Meghann Barsalou."
+>
+  <section class="service-hero">
+    <Picture
+      src={image('portfolio/misc/exteriordoortrimandsiding.jpg')}
+      widths={[768, 1280, 1920]}
+      sizes="100vw"
+      alt=""
+      loading="eager"
+    />
+    <div class="service-hero-content">
+      <p class="eyebrow eyebrow-center">Carpentry Services</p>
+      <h1>Windows &amp; Doors</h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="service-content">
+      <p class="eyebrow"><a href="/services">All services</a></p>
+      <h2>Expert Window &amp; Door Installation</h2>
+      <p>Windows and doors are more than just functional elements of your home — they are the threshold between your indoor comfort and the outside world. As a Red Seal Carpenter, I bring precision and care to every installation and replacement project.</p>
+      <p>Living on the North Coast means dealing with heavy rain, wind, and varying temperatures. I ensure every window and door I install is properly sealed, insulated, and built to withstand our unique climate while enhancing your home's energy efficiency and curb appeal.</p>
+
+      <h2>What I Offer</h2>
+      <ul>
+        <li>New window installation and replacement</li>
+        <li>Exterior and interior door installation</li>
+        <li>Custom trim work and finishing</li>
+        <li>Weatherproofing and sealing</li>
+        <li>Energy-efficient upgrades</li>
+        <li>Rot repair around window and door frames</li>
+      </ul>
+
+      <h2>My Approach</h2>
+      <p>I take the time to understand your needs — whether you're looking to upgrade for energy efficiency, enhance your home's appearance, or replace aging fixtures. I work with quality materials and pay attention to every detail, from the initial measurements to the final trim work. Every installation is treated with the same care I would give to my own home.</p>
+
+      <div style="margin-top: var(--space-fluid-xl); text-align: center;">
+        <a href="/contact" class="btn btn-primary btn-lg">Get a Quote</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
